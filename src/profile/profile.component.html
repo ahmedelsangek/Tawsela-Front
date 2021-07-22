@@ -1,6 +1,160 @@
 <!-- the start of two button navbar  -->
-<div class="d-flex justify-content-center align-self-center w-100 ">
-<button >About you</button> 
-<button>Account</button>
+<div class="d-flex justify-content-center align-self-center w-100 header-container border-bottom ">
+<button name="headerBtn" id="firstShown" (click)="showAbout()" class="headerBtn" >About you</button> 
+<button name="headerBtn" (click)="showAccount()" class="headerBtn" >Account</button>
 </div>
 <!-- the end of two buttons navbar  -->
+<!-- the start of the main body  -->
+<section *ngIf="aboutYou"  class="row justify-content-center">
+    <!-- the start of the name and photo part -->
+    <div class="col-12 col-md-5">
+    <div class="border-bottom">
+   <a href="#" class="d-flex justify-content-between align-items-center body-container text-decoration-none  p-3">
+       <div>
+           <h4 class="text-dark">UserName</h4>
+           <span class="text-muted">Newcomer</span>
+
+           
+       </div>
+       <!-- the start of image and photo part -->
+       <div>
+       <img src="../assets/Images/Profile.jpg" class="img-responsive rounded-circle profileImg">
+       <a href="#" class="m-1 text-dark"><i class="bi bi-chevron-right"></i></a>
+         </div>
+         <!-- the end of image and photo part -->
+        </a>
+
+    <!-- the end of the name and photo part -->
+    <!-- the start of more infromation1 -->
+    <a href="#" class="info p-3 ">
+        <i class="bi bi-plus-circle"></i>
+        <span> Add a mini bio</span>
+    </a>
+    <!-- the end of more infromation 1-->
+     <!-- the start of more infromation 2-->
+     <a href="#" class="info p-3 ">
+        <span> Edit Profile picture</span>
+    </a>
+    <!-- the end of more infromation2 -->
+    <!-- the start of more infromation 3-->
+    <a href="#" class="info p-3 ">
+        <span> Edit personal details</span>
+    </a>
+    <!-- the end of more infromation3 -->
+</div>
+<!-- the start of the secon section  -->
+<div>
+ <!-- the start of more infromation1 -->
+ <a href="#" class="info p-3 my-1 ">
+    <i class="bi bi-plus-circle"></i>
+    <span> Add a mini bio</span>
+</a>
+<!-- the end of more infromation 1-->
+</div>
+<!-- the end of the second section -->
+<!-- the start of the third section  -->
+<div class="border-top border-bottom">
+    <!-- the start of more infromation1 -->
+    <a href="#" class="info p-3 ">
+        <i class="bi bi-plus-circle"></i>
+        <span> Verify toyr ID </span>
+    </a>
+    <!-- the start of more infromation1 -->
+    <a href="#" class="info p-3 ">
+        <i class="bi bi-plus-circle"></i>
+        <span> Verify you phone </span>
+    </a>
+    <!-- the start of more infromation1 -->
+    <a href="#" class="info p-3 ">
+        <i class="bi bi-plus-circle"></i>
+        <span> Verify you Email</span>
+    </a>
+
+</div>
+<!-- the end of the third section -->
+<!-- the start of the last section -->
+<div >
+     <!-- the start of more infromation1 -->
+     <a href="#" class="info p-3 ">
+        <i class="bi bi-plus-circle"></i>
+        <span> Add Vehicle </span>
+    </a>
+
+</div>
+<!-- the end of the last section -->
+</div>
+</section>
+<!-- the start of account section -->
+<section *ngIf="account" class="row justify-content-center">
+    <!-- the start of the main container -->
+  <div class="col-12 col-md-5">
+      <!-- the start of the first section -->
+      <div class="border-bottom">
+      <div class=" d-flex body-container my-1 p-3 justify-content-between">
+         <span>Ratings you've left</span>
+         <i class="bi bi-chevron-right"></i>
+      </div>
+    </div>
+      <!-- the end of the fisrt section  -->
+        <!-- the start of the second section -->
+        <div class="border-bottom">
+        <div class=" d-flex body-container  my-1 p-3 justify-content-between">
+            <span>Notifications, emails & SMS</span>
+            <i class="bi bi-chevron-right"></i>
+         </div>
+         <div class=" d-flex body-container my-1 p-3 justify-content-between">
+            <span>Password</span>
+            <i class="bi bi-chevron-right"></i>
+         </div>
+         <div class=" d-flex body-container my-1 p-3 justify-content-between">
+            <span>Postal address</span>
+            <i class="bi bi-chevron-right"></i>
+         </div>
+        </div>
+         <!-- the end of the second section  -->
+          <!-- the start of the third section -->
+        <div class="border-bottom">
+            <div class=" d-flex body-container  my-1 p-3 justify-content-between">
+                <span>Transfers</span>
+                <i class="bi bi-chevron-right"></i>
+             </div>
+             <div class=" d-flex body-container my-1 p-3 justify-content-between">
+                <span>Transfer methods</span>
+                <i class="bi bi-chevron-right"></i>
+             </div>
+             <div class=" d-flex body-container my-1 p-3 justify-content-between">
+                <span>Payment & refund</span>
+                <i class="bi bi-chevron-right"></i>
+             </div>
+            </div>
+             <!-- the end of the third section  -->
+             <!-- the start of the forth section -->
+             <div class="border-bottom">
+                <div class=" d-flex body-container my-1 p-3 justify-content-between">
+                    <span>Data protection</span>
+                    <i class="bi bi-chevron-right"></i>
+                 </div>
+             </div>
+             <!-- the end of the forh section -->
+              <!-- the start of the fifth section -->
+              <div class="border-bottom">
+                <div id="logOut" class=" d-flex my-1 p-3 ">
+                    <span>Log out</span>
+                    
+                 </div>
+             </div>
+             <!-- the end of the fifth section -->
+              <!-- the start of the final section -->
+              <div class="border-bottom">
+                <div id="logOut" class=" d-flex my-1 p-3 ">
+                    <span>Close my account</span>
+                    
+                 </div>
+             </div>
+             <!-- the end of the final section -->
+
+  </div>
+  <!-- te end of the main container -->
+</section>
+<!-- the end of account section -->
+<!-- the end of the main body -->
