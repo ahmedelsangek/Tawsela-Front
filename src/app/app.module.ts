@@ -18,6 +18,7 @@ import { CarPoolingComponent } from './offer-seats/car-pooling/car-pooling.compo
 import { CommentDivComponent } from './offer-seats/comment-div/comment-div.component';
 import { VideoDivComponent } from './offer-seats/video-div/video-div.component';
 import { GrayDivComponent } from './offer-seats/gray-div/gray-div.component';
+import { HelpCenterDivComponent } from './offer-seats/help-center-div/help-center-div.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { GrayDivComponent } from './offer-seats/gray-div/gray-div.component';
     CarPoolingComponent,
     CommentDivComponent,
     VideoDivComponent,
-    GrayDivComponent
+    GrayDivComponent,
+    HelpCenterDivComponent
   ],
   imports: [
     BrowserModule,
