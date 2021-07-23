@@ -12,6 +12,12 @@ import { NameComponent } from './registration/form/name/name.component';
 import { DateComponent } from './registration/form/date/date.component';
 import { GenderComponent } from './registration/form/gender/gender.component';
 import { PasswordComponent } from './registration/form/password/password.component';
+import { OfferSeatsComponent } from './offer-seats/offer-seats.component';
+import { HeaderDivComponent } from './offer-seats/header-div/header-div.component';
+import { CarPoolingComponent } from './offer-seats/car-pooling/car-pooling.component';
+import { CommentDivComponent } from './offer-seats/comment-div/comment-div.component';
+import { VideoDivComponent } from './offer-seats/video-div/video-div.component';
+import { GrayDivComponent } from './offer-seats/gray-div/gray-div.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +29,13 @@ import { PasswordComponent } from './registration/form/password/password.compone
     NameComponent,
     DateComponent,
     GenderComponent,
-    PasswordComponent
+    PasswordComponent,
+    OfferSeatsComponent,
+    HeaderDivComponent,
+    CarPoolingComponent,
+    CommentDivComponent,
+    VideoDivComponent,
+    GrayDivComponent
   ],
   imports: [
     BrowserModule,
