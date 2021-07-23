@@ -1,0 +1,57 @@
+section {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 50px auto;
+  width: 40%;
+  .register-option {
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 40px;
+      font-weight: 600;
+      color: #054752;
+    }
+    hr {
+      background-color: rgb(182, 177, 202);
+    }
+    .choice {
+      cursor: pointer;
+      padding: 20px;
+      text-decoration: none;
+      &:hover {
+        background-color: #ededed;
+      }
+      .opt {
+        font-size: 18px;
+        line-height: 20px;
+        color: #054752;
+        font-weight: bold;
+      }
+      .icons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: flex-end;
+        align-items: center;
+        .bi-facebook {
+          color: #1877f2;
+          margin-right: 15px;
+        }
+        .bi-chevron-right {
+          color: #054752;
+          font-weight: bold;
+        }
+      }
+    }
+    .login-choice {
+      color: #054752;
+      font-weight: bold;
+      padding: 0 15px;
+      margin-top: 15px;
+      span {
+        color: #00aff5;
+        cursor: pointer;
+      }
+    }
+  }
+}
