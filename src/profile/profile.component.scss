@@ -1,0 +1,36 @@
+.header-container{
+    height:54px;
+}
+
+.headerBtn{
+    width: 20.5%;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px; 
+    border-bottom: 0px;
+    background-color: white;
+    color: #4ab6f5;
+    &:focus{
+        border-bottom: 3px solid #054752;
+        color:#054752;
+    }
+}
+.body-container:hover{
+background-color:#ededed;
+}
+.profileImg{
+    width: 96px;
+}
+.info{
+    display: inline-block;
+    color:#4ab6f5;
+    text-decoration: none;
+    font-size: 18px;
+    width:100%;
+    &:hover{
+        background-color:#ededed;
+    }
+}
+#logOut{
+    color:#4ab6f5;
+}
