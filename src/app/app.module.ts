@@ -19,6 +19,7 @@ import { CommentDivComponent } from './offer-seats/comment-div/comment-div.compo
 import { VideoDivComponent } from './offer-seats/video-div/video-div.component';
 import { GrayDivComponent } from './offer-seats/gray-div/gray-div.component';
 import { HelpCenterDivComponent } from './offer-seats/help-center-div/help-center-div.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { HelpCenterDivComponent } from './offer-seats/help-center-div/help-cente
     CommentDivComponent,
     VideoDivComponent,
     GrayDivComponent,
-    HelpCenterDivComponent
+    HelpCenterDivComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
