@@ -1,47 +1,85 @@
-<!-- <section>
+<section>
   <div class="container">
-    <form>
-      <div class="mb-3">
-        <label for="exampleInputFirstName" class="form-label">First name</label>
-        <input type="text" class="form-control" id="exampleInputFirstName">
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputLastName" class="form-label">Last name</label>
-        <input type="text" class="form-control" id="exampleInputLastName">
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      </div>
-      <div class="mb-3">
-        <label for="exampleInputDate" class="form-label">Date</label>
-        <input type="text" class="form-control" id="exampleInputDate">
-      </div>
-      <div class="form-group">
-        <label>Gender</label>
-        <div class="form-control">
-          <label class="radio-inline">
-            <input type="radio" name="gender" value="male" ngModel>
-            Male
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="gender" value="female" ngModel>
-            Female
-          </label>
+    <form #Form='ngForm'>
+
+      <div  *ngIf="email" class="info text-center">
+        <h1>What's your email?</h1>
+        <div class="input-div mb-3">
+          <div  *ngIf=" (email.errors?.required && email.touched)" class="form-text text-danger validationText">This field is required.</div>
+          <div  *ngIf=" (email.errors?.pattern )" class="form-text text-danger validationText">Must match yourEmail@domain.com</div>
+          <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp" required placeholder="Email" pattern="(?:^|\s)[\w!#$%&'*+/=?^`{|}~-](\.?[\w!#$%&'*+/=?^`{|}~-]+)*@\w+[.-]?\w*\.[a-zA-Z]{2,3}\b" name="email" #email="ngModel" [(ngModel)]="appUser.email" >
         </div>
+        <button (click)="next()" [disabled]="email.invalid" >Continue</button>
       </div>
-      <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1">
+
+      <div *ngIf="name" class="info text-center">
+        <h1>So what's your name?</h1>
+        <div class="input-div mb-3">
+          <div  *ngIf=" (firstName.errors?.required && firstName.touched)" class="form-text text-danger">This field is required.</div>
+          <input type="text" id="first-name" placeholder="First name" required name="firstName" #firstName="ngModel" [(ngModel)]="appUser.firstName">
+        </div>
+        <div class="input-div mb-3">
+          <div  *ngIf=" (lastName.errors?.required && lastName.touched)" class="form-text text-danger">This field is required.</div>
+          <input type="text" id="last-name" placeholder="Last name" required name="lastName" #lastName="ngModel" [(ngModel)]="appUser.lastName">
+        </div>
+        <button (click)="next()" [disabled]="firstName.invalid && lastName.invalid" >Continue</button>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <!-- enter birthdate -->
+      <div *ngIf="date" class="info text-center">
+        <h1>What's your date of birth?</h1>
+        <div class="input-div mb-3">
+          <div  *ngIf=" (birthday.errors?.required && birthday.touched)" class="form-text text-danger">This field is required.</div>
+          <div  *ngIf=" (birthday.errors?.pattern )" class="form-text text-danger">the Right Pattern dd/mm/yyyy</div>
+          <input type="text" id="date" placeholder="DD/MM/YYYY" name="birthday" required pattern="(?:0[1-9]|[12][0-9]|3[01])[-/.](?:0[1-9]|1[012])[-/.](?:19\d{2}|20[01][0-9]|2020)" #birthday="ngModel" [(ngModel)]="appUser.birthday">
+        </div>
+        <button (click)="next()" [disabled]="birthday.invalid " >Continue</button>
+      </div>
+
+      <!-- select gender -->
+      <div *ngIf="gender" class="register-option">
+        <h1>How would you like to be<br>addressed?</h1>
+        <label class="radio-inline choice row">
+          <div class="opt col-lg-8">
+            Mrs./Ms.
+          </div>
+          <div class="icons col-lg-4">
+            <input type="radio" name="gender" value="mrs" style="opacity: 0;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-chevron-right"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </div>
+        </label>
+        <hr>
+        <label class="radio-inline choice row">
+          <div class="opt col-lg-8" style="float: left;">
+            Mr.
+          </div>
+          <div class="icons col-lg-4">
+            <input type="radio" name="gender" value="ms" style="opacity: 0;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-chevron-right"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </div>
+        </label>
+        <button type="button"(click)="next()" >Continue</button>  
+      </div>
+      <!-- password -->
+      <div *ngIf="password" class="info text-center">
+        <h1>You'll need a password too.</h1>
+        <div class="input-div mb-3">
+          <div  *ngIf=" (password.errors?.required && password.touched)" class="form-text text-danger transition">This field is required.</div>
+          <div  *ngIf=" (password.errors?.pattern)" class="form-text text-danger">Minimum eight characters, at least one letter and one number</div>
+          <input type="password" id="password" placeholder="Password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required name="password" #password="ngModel" [(ngModel)]="appUser.password">
+        </div>
+        <button type="submit" [disabled]="password.invalid">submit</button>  
+      </div>
     </form>
-
   </div>
-</section> -->
+</section>
 
-<!-- <app-email></app-email> -->
-<!-- <app-name></app-name> -->
-<!-- <app-date></app-date> -->
-<!-- <app-gender></app-gender> -->
-<app-password></app-password>
+
+ 
