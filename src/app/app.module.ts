@@ -7,11 +7,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { FormsModule } from '@angular/forms';
 import { RegistrationComponent } from './registration/registration.component';
 import { FormComponent } from './registration/form/form.component';
-import { EmailComponent } from './registration/form/email/email.component';
-import { NameComponent } from './registration/form/name/name.component';
-import { DateComponent } from './registration/form/date/date.component';
-import { GenderComponent } from './registration/form/gender/gender.component';
-import { PasswordComponent } from './registration/form/password/password.component';
 import { OfferSeatsComponent } from './offer-seats/offer-seats.component';
 import { HeaderDivComponent } from './offer-seats/header-div/header-div.component';
 import { CarPoolingComponent } from './offer-seats/car-pooling/car-pooling.component';
@@ -20,6 +15,7 @@ import { VideoDivComponent } from './offer-seats/video-div/video-div.component';
 import { GrayDivComponent } from './offer-seats/gray-div/gray-div.component';
 import { HelpCenterDivComponent } from './offer-seats/help-center-div/help-center-div.component';
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +23,6 @@ import { HeaderComponent } from './header/header.component';
     ProfileComponent,
     RegistrationComponent,
     FormComponent,
-    EmailComponent,
-    NameComponent,
-    DateComponent,
-    GenderComponent,
-    PasswordComponent,
     OfferSeatsComponent,
     HeaderDivComponent,
     CarPoolingComponent,
@@ -39,7 +30,8 @@ import { HeaderComponent } from './header/header.component';
     VideoDivComponent,
     GrayDivComponent,
     HelpCenterDivComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
