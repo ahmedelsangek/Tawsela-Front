@@ -2,7 +2,7 @@
   <div class="container">
     <div class="register-option">
       <h1>How do you want to sign up?</h1>
-      <a href="#" class="choice row">
+      <a [routerLink]="['/signUpForm']" class="choice row">
         <div class="opt col-lg-8">
           Continue with Facebook
         </div>
@@ -20,7 +20,7 @@
         </div>
       </a>
       <hr>
-      <a href="#" class="choice row">
+      <a [routerLink]="['/signUpForm']" class="choice row">
         <div class="opt col-lg-8" style="float: left;">
           Continue with email
         </div>

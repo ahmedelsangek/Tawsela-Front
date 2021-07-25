@@ -11,7 +11,7 @@
             <a class="d-flex align-items-center mx-2 px-2 nav-link main-color " href="#">
                 <i class="bi bi-search"></i>
                 <span class="px-2">Search</span></a>
-            <a class="d-flex align-items-center mx-2 px-2 nav-link main-color " title="" href="#">
+            <a class="d-flex align-items-center mx-2 px-2 nav-link main-color " title="" [routerLink]="['/offer-seats']">
                 <i class="bi bi-plus-circle"></i>
                 <span class="px-2">Publish a ride</span>
             </a>
@@ -26,8 +26,8 @@
                 
                 <div class="menu">
                     <ul>
-                        <li><a class="nav-link" href="#">Login</a></li>
-                        <li><a class="nav-link" href="#">Sign up</a></li>
+                        <li><a class="nav-link" href="">Login</a></li>
+                        <li><a class="nav-link" [routerLink]="['/sign-up']">Sign up</a></li>
                     </ul>
                 </div>
             </div>

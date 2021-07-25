@@ -16,6 +16,7 @@ import { GrayDivComponent } from './offer-seats/gray-div/gray-div.component';
 import { HelpCenterDivComponent } from './offer-seats/help-center-div/help-center-div.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FooterComponent } from './footer/footer.component';
     GrayDivComponent,
     HelpCenterDivComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
