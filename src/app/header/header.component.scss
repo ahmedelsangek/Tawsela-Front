@@ -81,6 +81,14 @@ nav{
     nav {
         height: 56px;
     }
+    .nav-left{
+        .navbar-brand{
+            img{
+                width: 100px;
+                margin-top: 4%;
+            }
+        }
+    }
     .nav-right{
         display: flex;
         justify-content: space-around;
@@ -101,6 +109,7 @@ nav{
     .avatar .menu{
         position: absolute;
         top: 51px;
+        width: 330px;
     }
 
 }
