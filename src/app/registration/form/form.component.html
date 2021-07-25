@@ -4,9 +4,10 @@
 
       <div  *ngIf="email" class="info text-center">
         <h1>What's your email?</h1>
-        <div class="input-div mb-3">
-          <div  *ngIf=" (email.errors?.required && email.touched)" class="form-text text-danger validationText">This field is required.</div>
+        <div  *ngIf=" (email.errors?.required && email.touched)" class="form-text text-danger validationText">This field is required.</div>
           <div  *ngIf=" (email.errors?.pattern )" class="form-text text-danger validationText">Must match yourEmail@domain.com</div>
+        <div class="input-div mb-3">
+          
           <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp" required placeholder="Email" pattern="(?:^|\s)[\w!#$%&'*+/=?^`{|}~-](\.?[\w!#$%&'*+/=?^`{|}~-]+)*@\w+[.-]?\w*\.[a-zA-Z]{2,3}\b" name="email" #email="ngModel" [(ngModel)]="appUser.email" >
         </div>
         <button (click)="next()" [disabled]="email.invalid" >Continue</button>
