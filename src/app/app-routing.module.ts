@@ -8,7 +8,7 @@ import { FormComponent } from './registration/form/form.component';
 import { RegistrationComponent } from './registration/registration.component';
 
 const routes: Routes = [
- // {path:"",redirectTo:"home",pathMatch:"full"},
+  {path:"",redirectTo:"home",pathMatch:"full"},
   {path:"home",component:MainPageComponent},
   {path:"offer-seats",component:OfferSeatsComponent},
   {path:"profile",component:ProfileComponent},
