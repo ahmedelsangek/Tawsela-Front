@@ -9,7 +9,7 @@ import { PassengersComponent } from './passengers/passengers.component';
 })
 export class SearchCarSharingComponent implements OnInit {
 searchTrip= new Trip();
- @ViewChild('number',{static: false})passengers?: PassengersComponent;
+ @ViewChild(PassengersComponent)passengers?: PassengersComponent;
  passenger:any;
   constructor() { }
 
