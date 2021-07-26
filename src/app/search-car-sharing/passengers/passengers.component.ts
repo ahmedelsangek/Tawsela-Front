@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-passengers',
@@ -6,16 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./passengers.component.scss']
 })
 export class PassengersComponent implements OnInit {
- num:any=2;
- firstTime=true;
+ num:any=1;
   constructor() { }
 
   ngOnInit(): void {
-    this.num=2;
+    
     document.getElementById("miusBtn")?.classList.add("text-muted")
     this.num= document.getElementById("number")?.innerText;
-    console.log(this.num)
+    this.num=1;
   }
+
 
   minus(){
     if(this.num>=2){
@@ -30,17 +30,15 @@ export class PassengersComponent implements OnInit {
 
   }
   plus(){
-    this.firstTime=false;
      if (this.num<=3) {
       document.getElementById("miusBtn")?.classList.remove("text-muted")
       document.getElementById("miusBtn")?.classList.add("baseColor")
       this.num++
-      console.log(this.num)
      }else{
       document.getElementById("plusBtn")?.classList.remove("baseColor")
       document.getElementById("plusBtn")?.classList.add("text-muted")
      }
     
-   
+     
   }
 }

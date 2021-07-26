@@ -2,11 +2,11 @@
     <h1>Number of seats to book</h1>
     <div class="d-flex justify-content-center align-items-center my-5">
         <a id="miusBtn" (click)="minus()" class=" mx-5  addRemoveBtn "><i class="bi bi-dash-circle"></i></a>
-        <span id="number" class=" mx-5 addRemoveBtn "><span *ngIf="firstTime">1</span>{{num}}</span>
+        <span id="number" class=" mx-5 addRemoveBtn ">{{num}}</span>
         <a id="plusBtn" (click)="plus()" class=" mx-5 baseColor addRemoveBtn "><i class="bi bi-plus-circle"></i></a>
 
     </div>
-    <button [routerLink]="['/search']">Continue</button>
+    <button  [routerLink]="['/search']">Continue</button>
 
 
 </section>

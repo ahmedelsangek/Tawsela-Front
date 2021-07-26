@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { Trip } from '../shared classes and interfaces/trip';
+import { PassengersComponent } from './passengers/passengers.component';
+
 @Component({
   selector: 'app-search-car-sharing',
   templateUrl: './search-car-sharing.component.html',
@@ -7,9 +9,15 @@ import { Trip } from '../shared classes and interfaces/trip';
 })
 export class SearchCarSharingComponent implements OnInit {
 searchTrip= new Trip();
+ @ViewChild('number',{static: false})passengers?: PassengersComponent;
+ passenger:any;
   constructor() { }
 
   ngOnInit(): void {
+  }
+  ngAfterViewInit(){
+    this.passenger=this.passengers?.num
+  console.log(this.passengers?.num);
   }
 
 }

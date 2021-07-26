@@ -44,12 +44,12 @@ import { PassengersComponent } from './search-car-sharing/passengers/passengers.
     LogInComponent,
     SearchCarSharingComponent,
     DateComponent,
-    PassengersComponent
+    PassengersComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

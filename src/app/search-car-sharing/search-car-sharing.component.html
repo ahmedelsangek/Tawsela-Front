@@ -13,12 +13,15 @@
               <!-- the date and number of passenger section -->
               <div class="border-top border-bottom d-flex justify-content-between dateSection">
                   <a [routerLink]="['/date']"class="p-3 Links"  >Today</a>
-                  <a [routerLink]="['/passengers']" class="p-3 Links" >Passengers</a>
+                  <a [routerLink]="['/passengers']" class="p-3 Links" >{{passenger}} Passengers</a>
 
               </div>
                 <button  type="submit">Search</button>
-                <app-date *ngIf="false"></app-date>
-                <app-passengers *ngIf="false"></app-passengers>
+                <!-- the children -->
+                <div class="d-flex">
+                <app-date></app-date>
+                <app-passengers ></app-passengers>
+                 </div>
     
                 </div>
                 
