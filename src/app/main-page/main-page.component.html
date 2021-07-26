@@ -5,24 +5,39 @@
         <div class="head-form-container">
             <h1 class="hero-head">Your ride. Your choice.</h1>
             <div class="form-container">
-                <form class="form" action="">
-                    <!-- <div class="kirk-searchForm-from-container">
-                        <div class="kirk-searchForm-from">
-                            <div transform="[object Object]" class="sc-bmyXtO jhmaoZ">
-                                <button type="button" class="kirk-search-button">
-                                    <span class="kirk-bullet--searchForm">
-                                        <div class="sc-dnqmqq fzalHo kirk-bullet kirk-bullet--search"
-                                            aria-hidden="true">
-
-                                        </div>
-                                    </span>
-                                    <span
-                                        class="sc-iwsKbI sc-VigVT gmHvlW kirk-search-ellipsis kirk-search-placeholder kirk-search-ellipsis kirk-search-placeholder">Leaving
-                                        from...</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div> -->
+                <form class="form row " action="">
+                    <div class="from col-md-3 h-100 my-auto d-flex">
+                        <i class="bi bi-record-circle-fill ms-1 my-auto"></i>
+                        <input type="text" class="from-input form-control mx-2 ps-2 border-0"
+                            placeholder="Leaving from..." aria-label="LeavingFrom" aria-describedby="basic-addon1">
+                    </div>
+                    <hr class="border">
+                    <div class="to col-md-2 h-100 my-auto d-flex">
+                        <i class="bi bi-record-circle-fill ms-1 my-auto"></i>
+                        <input type="text" name="goingToDate" class="from-input form-control mx-2 ps-2 border-0" placeholder="Going to..."
+                            aria-label="LeavingFrom" aria-describedby="basic-addon1">
+                    </div>
+                    <hr class="border">
+                    <div class="date col-md-3  h-100 my-auto d-flex">
+                        <input type="date"  name="date" class="form-control flex-col-reverse me-2 ps-2  border-0">
+                    </div>
+                    <hr class="border">
+                    <div class="number col-md-2 h-100 my-auto d-flex">
+                            <i class="bi bi-person-plus-fill ms-2 my-auto"></i>
+                            <input class="quantity form-control border-0 w-75 mx-2 ps-2" min="0" name="quantity" value="1" placeholder="1 Passenger" type="number">
+                    </div>
+                    <hr class="border">
+                    <div class="search col-auto h-100 my-auto d-flex m-auto">
+                        
+                        <button type="submit" class="">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="kirk-icon sc-ifAKCX PRjYD" width="24" height="24" aria-hidden="true">
+                                <g fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                    <line x1="22" y1="22" x2="16.4" y2="16.4"></line>
+                                    <circle cx="10" cy="10" r="9"></circle>
+                                </g>
+                            </svg>
+                        </button>   
+                    </div>
                 </form>
             </div>
         </div>
