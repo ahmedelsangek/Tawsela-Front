@@ -1,0 +1,25 @@
+
+<section>
+<form #Form='ngForm'>
+<!-- email -->
+    <div  *ngIf="email" class="info text-center  ">
+      <h1>What's your email?</h1>
+      <div  *ngIf=" (email.errors?.required && email.touched)" class="form-text text-danger ">This field is required.</div>
+        <div  *ngIf=" (email.errors?.pattern )" class="form-text text-danger ">Must match yourEmail@domain.com</div>
+      <div class="input-div mb-3">
+        <input type="email" id="exampleInputEmail1" aria-describedby="emailHelp" required placeholder="Email" pattern="(?:^|\s)[\w!#$%&'*+/=?^`{|}~-](\.?[\w!#$%&'*+/=?^`{|}~-]+)*@\w+[.-]?\w*\.[a-zA-Z]{2,3}\b" name="email" #email="ngModel" [(ngModel)]="appUser.email" >
+      </div>
+      <button (click)="next()" [disabled]="email.invalid" >Continue</button>
+    </div>
+    <!-- password -->
+    <div *ngIf="password" class="info text-center">
+        <h1>We'll need the password.</h1>
+        <div class="input-div mb-3">
+          <div  *ngIf=" (password.errors?.required && password.touched)" class="form-text text-danger transition">This field is required.</div>
+          <div  *ngIf=" (password.errors?.pattern)" class="form-text text-danger">Minimum eight characters, at least one letter and one number</div>
+          <input type="password" id="password" placeholder="Password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required name="password" #password="ngModel" [(ngModel)]="appUser.password">
+        </div>
+        <button type="submit" [disabled]="password.invalid">submit</button>  
+      </div>
+    </form>
+</section>

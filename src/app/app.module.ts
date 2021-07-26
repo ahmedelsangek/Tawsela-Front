@@ -17,6 +17,7 @@ import { HelpCenterDivComponent } from './offer-seats/help-center-div/help-cente
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LogInComponent } from './log-in/log-in.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HelpCenterDivComponent,
     HeaderComponent,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LogInComponent } from './log-in/log-in.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { OfferSeatsComponent } from './offer-seats/offer-seats.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:"profile",component:ProfileComponent},
   {path:"sign-up",component:RegistrationComponent},
   {path:"signUpForm",component:FormComponent},
+  {path:"login",component:LogInComponent},
    {path:"*",component:PageNotFoundComponent},
 ];
 
