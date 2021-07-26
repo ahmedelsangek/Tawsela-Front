@@ -17,7 +17,11 @@ import { HelpCenterDivComponent } from './offer-seats/help-center-div/help-cente
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+<<<<<<< Updated upstream
 import { LogInComponent } from './log-in/log-in.component';
+=======
+import { PublishFormComponent } from './publish-form/publish-form.component';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -35,7 +39,11 @@ import { LogInComponent } from './log-in/log-in.component';
     HeaderComponent,
     FooterComponent,
     PageNotFoundComponent,
+<<<<<<< Updated upstream
     LogInComponent
+=======
+    PublishFormComponent
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
