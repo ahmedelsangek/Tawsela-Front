@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CitiesService } from '../shared classes and interfaces/cities.service';
 import { Trip } from '../shared classes and interfaces/trip';
 
 @Component({
@@ -7,6 +8,7 @@ import { Trip } from '../shared classes and interfaces/trip';
   styleUrls: ['./publish-form.component.scss'],
 })
 export class PublishFormComponent implements OnInit {
+
   departure = true;
   distination = false;
   date = false;
@@ -14,11 +16,15 @@ export class PublishFormComponent implements OnInit {
   avilablePassengers = false;
   recommPrice = false;
   notice = false;
-  public city = ["Asyut", "Luxor" , "Aswan" , "Sohag"];
-  constructor() {}
+  selectedTax = 0;
+  cities = [] as any;
   trip = new Trip();
 
-  ngOnInit(): void {}
+  constructor(private _cityService: CitiesService) { }
+
+  ngOnInit(): void {
+    this.cities = this._cityService.getCities();
+  }
   next() {
     if (this.departure == true) {
       this.departure = false;
@@ -41,5 +47,8 @@ export class PublishFormComponent implements OnInit {
     } else if (this.notice == true) {
       this.notice = false;
     }
+  }
+  selectedCity(ev: Event,  selectedValue:any) {
+    this.selectedTax = selectedValue.tax;
   }
 }
