@@ -19,7 +19,7 @@
           <div  *ngIf=" (password.errors?.pattern)" class="form-text text-danger">Minimum eight characters, at least one letter and one number</div>
           <input type="password" id="password" placeholder="Password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required name="password" #password="ngModel" [(ngModel)]="appUser.password">
         </div>
-        <button type="submit" [disabled]="password.invalid">submit</button>  
+        <button type="submit" [routerLink]="['/home']" [disabled]="password.invalid">submit</button>  
       </div>
     </form>
 </section>

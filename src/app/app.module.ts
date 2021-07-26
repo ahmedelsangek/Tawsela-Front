@@ -17,17 +17,11 @@ import { HelpCenterDivComponent } from './offer-seats/help-center-div/help-cente
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-<<<<<<< Updated upstream
 import { LogInComponent } from './log-in/log-in.component';
-<<<<<<< Updated upstream
-=======
 import { PublishFormComponent } from './publish-form/publish-form.component';
->>>>>>> Stashed changes
-=======
 import { SearchCarSharingComponent } from './search-car-sharing/search-car-sharing.component';
 import { DateComponent } from './search-car-sharing/date/date.component';
 import { PassengersComponent } from './search-car-sharing/passengers/passengers.component';
->>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -45,18 +39,12 @@ import { PassengersComponent } from './search-car-sharing/passengers/passengers.
     HeaderComponent,
     FooterComponent,
     PageNotFoundComponent,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    LogInComponent
-=======
-    PublishFormComponent
->>>>>>> Stashed changes
-=======
+    LogInComponent,
+    PublishFormComponent,
     LogInComponent,
     SearchCarSharingComponent,
     DateComponent,
     PassengersComponent
->>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,

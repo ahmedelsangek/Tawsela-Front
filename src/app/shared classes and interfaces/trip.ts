@@ -1,5 +1,4 @@
 export class Trip {
-<<<<<<< Updated upstream
     departure?:string;
     distination?:string;
     date?:string;
@@ -7,12 +6,10 @@ export class Trip {
     avilablePassengers?:number;
     recommPrice?:number;
     notice?:string;
-=======
     DriverId?: string
     locationFrom?: string
     locationTo?: string
     DepartureTime?: string
     DepatrureDate?: string
     arrivalDate?: string
->>>>>>> Stashed changes
 }

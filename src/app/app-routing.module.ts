@@ -19,19 +19,12 @@ const routes: Routes = [
   {path:"profile",component:ProfileComponent},
   {path:"sign-up",component:RegistrationComponent},
   {path:"signUpForm",component:FormComponent},
-<<<<<<< Updated upstream
   {path:"login",component:LogInComponent},
-<<<<<<< Updated upstream
-=======
   {path:"publishForm",component:PublishFormComponent},
->>>>>>> Stashed changes
-   {path:"*",component:PageNotFoundComponent},
-=======
   {path:"search",component:SearchCarSharingComponent},
   {path:"date",component:DateComponent},
   {path:"passengers",component:PassengersComponent},
   {path:"*",component:PageNotFoundComponent},
->>>>>>> Stashed changes
 ];
 
 @NgModule({
