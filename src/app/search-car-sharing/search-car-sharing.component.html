@@ -1,0 +1,28 @@
+<section>
+    <form #Form="ngForm">
+        <div  class="info text-center d-flex flex-column justify-content-center align-items-center">
+            <h1>Where do you want to go?</h1>
+            <div class="input-div mb-3">
+              <div  *ngIf=" (locationTo.errors?.required && locationTo.touched)" class="form-text text-danger">This field is required.</div>
+              <input type="text"  placeholder="Distination" required name="locationTo" #locationTo="ngModel" [(ngModel)]="searchTrip.locationTo">
+            </div>
+            <div class="input-div mb-3">
+                <div  *ngIf=" (locationFrom.errors?.required && locationFrom.touched)" class="form-text text-danger">This field is required.</div>
+                <input type="text"  placeholder="Where are you" required name="locationFrom" #locationFrom="ngModel" [(ngModel)]="searchTrip.locationFrom">
+              </div>
+              <!-- the date and number of passenger section -->
+              <div class="border-top border-bottom d-flex justify-content-between dateSection">
+                  <a [routerLink]="['/date']"class="p-3 Links"  >Today</a>
+                  <a [routerLink]="['/passengers']" class="p-3 Links" >Passengers</a>
+
+              </div>
+                <button  type="submit">Search</button>
+                <app-date *ngIf="false"></app-date>
+                <app-passengers *ngIf="false"></app-passengers>
+    
+                </div>
+                
+    </form>
+   
+
+</section>

@@ -1,0 +1,12 @@
+@import "/src/app/registration/form/form.component.scss";
+@import "/src/app/header/header.component.scss";
+.baseColor{
+    color:$base-color;
+}
+.addRemoveBtn{
+font-size: 60px;
+}
+*{
+    transition:all;
+    transition-duration: 500;
+}
