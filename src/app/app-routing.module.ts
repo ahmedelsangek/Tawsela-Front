@@ -15,7 +15,6 @@ const routes: Routes = [
   {path:"sign-up",component:RegistrationComponent},
   {path:"signUpForm",component:FormComponent},
    {path:"*",component:PageNotFoundComponent},
-   
 ];
 
 @NgModule({
