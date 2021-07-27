@@ -1,7 +1,9 @@
 section {
   font-family: Arial, Helvetica, sans-serif;
-  margin: 50px auto;
-  width: 40%;
+  margin: 75px auto 230px;
+  @media (min-width: 1200px) {
+    width: 50%;
+  }
   .register-option {
     h1 {
       text-align: center;
@@ -9,6 +11,12 @@ section {
       font-size: 40px;
       font-weight: 600;
       color: #054752;
+      @media (max-width: 768px) {
+        font-size: 30px;
+      }
+      @media (max-width: 480px) {
+        font-size: 25px;
+      }
     }
     hr {
       background-color: rgb(182, 177, 202);
@@ -25,6 +33,10 @@ section {
         line-height: 20px;
         color: #054752;
         font-weight: bold;
+        @media (max-width: 668px) {
+          text-align: center;
+          margin-bottom: 20px;
+        }
       }
       .icons {
         display: flex;
@@ -33,6 +45,9 @@ section {
         align-content: center;
         justify-content: flex-end;
         align-items: center;
+        @media (max-width: 668px) {
+          justify-content: center;
+        }
         .bi-facebook {
           color: #1877f2;
           margin-right: 15px;
@@ -55,4 +70,3 @@ section {
     }
   }
 }
-
