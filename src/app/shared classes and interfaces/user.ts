@@ -1,7 +1,7 @@
 export class User {
     email?: string;
-    firstName?: string;
-    lastName?:string;
+    userName?: string;
+    carId?:string;
     gender?: string;
     password?: string;
     birthday?: string;

@@ -10,6 +10,7 @@ export class FormComponent implements OnInit {
   email=true;
   name=false;
   date=false;
+  carId=false;
   gender=false;
   password=false;
 
@@ -26,6 +27,9 @@ export class FormComponent implements OnInit {
       this.date=true;
     }else if(this.date==true){
       this.date=false;
+      this. carId=true;
+    }else if (this.carId == true) {
+      this.carId=false;
       this. gender=true;
     }else if(this.gender==true){
       this. gender=false;

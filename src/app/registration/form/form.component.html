@@ -16,20 +16,20 @@
       </div>
 
       <div *ngIf="name" class="info text-center">
-        <h1>So what's your name?</h1>
+        <h1>So what's your user name?</h1>
         <div class="input-div mb-3">
-          <div *ngIf=" (firstName.errors?.required && firstName.touched)" class="form-text text-danger">This field is
+          <div *ngIf=" (userName.errors?.required && userName.touched)" class="form-text text-danger">This field is
             required.</div>
-          <input type="text" id="first-name" placeholder="First name" required name="firstName" #firstName="ngModel"
-            [(ngModel)]="appUser.firstName">
+          <input type="text" id="User-name" placeholder="User name" required name="userName" #userName="ngModel"
+            [(ngModel)]="appUser.userName">
         </div>
-        <div class="input-div mb-3">
+        <!-- <div class="input-div mb-3">
           <div *ngIf=" (lastName.errors?.required && lastName.touched)" class="form-text text-danger">This field is
             required.</div>
           <input type="text" id="last-name" placeholder="Last name" required name="lastName" #lastName="ngModel"
             [(ngModel)]="appUser.lastName">
-        </div>
-        <button (click)="next()" [disabled]="firstName.invalid && lastName.invalid">Continue</button>
+        </div> -->
+        <button (click)="next()" [disabled]="userName.invalid">Continue</button>
       </div>
       <!-- enter birthdate -->
       <div *ngIf="date" class="info text-center">
@@ -44,6 +44,23 @@
         </div>
         <button (click)="next()" [disabled]="birthday.invalid ">Continue</button>
       </div>
+
+
+      <!-- enter Car Id -->
+      <div *ngIf="carId" class="info text-center">
+        <h1>What's Id of your Car?</h1>
+        <div class="input-div mb-3">
+          <div *ngIf=" (carId.errors?.required && carId.touched)" class="form-text text-danger">This field is
+            required.</div>
+          <div *ngIf=" (carId.errors?.pattern )" class="form-text text-danger">the right pattern should content
+            characters and numbers (ABC-999)</div>
+          <input type="text" id="carId" placeholder="Car Id" name="carId" required
+            pattern="[0-9]{6,7}|[a-zA-Z]{1,3}-[0-9]{1,6}" #carId="ngModel" [(ngModel)]="appUser.carId">
+        </div>
+        <button (click)="next()" [disabled]="carId.invalid ">Continue</button>
+      </div>
+
+
 
       <!-- select gender -->
       <!-- <div *ngIf="gender" class="register-option">
