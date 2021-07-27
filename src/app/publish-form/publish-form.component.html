@@ -1,5 +1,5 @@
 <div class="container">
-    <form #Form="ngForm">
+    <form #Form="ngForm" >
         <!--Departure input-->
         <div *ngIf="departure" class="form-group">
             <h1 class="fw-bolder my-5">Where are you leaving from?</h1>
@@ -23,8 +23,8 @@
                 role="alert">Enter your Destination</div>
 
             <select id="distination" aria-describedby="distination" required placeholder="travelling from .. ?"
-                name="distination" #distination="ngModel" [(ngModel)]="trip.distination" (change)="selectedCity($event,distination.value)"
-                class="form-select w-25 mx-auto mb-3">
+                name="distination" #distination="ngModel" [(ngModel)]="trip.distination"
+                (change)="selectedCity($event,distination.value)" class="form-select w-25 mx-auto mb-3">
                 <option *ngFor="let city of cities" [ngValue]="city">
                     {{city.name}}
                 </option>
@@ -48,7 +48,6 @@
             <h1 class="fw-bolder my-5">At what time will you pick passengers up?</h1>
             <div *ngIf=" (time.errors?.required && time.touched)" class="alert alert-danger w-25 mx-auto" role="alert">
                 Select time please</div>
-
             <input type="time" id="time" aria-describedby="time" required placeholder="travelling from .. ?" name="time"
                 #time="ngModel" [(ngModel)]="trip.time" class="form-control w-25 mx-auto mb-3">
             <button (click)="next()" [disabled]="time.invalid" class="btn  btn-lg btn-primary my-3">Continue</button>
@@ -58,24 +57,57 @@
             <h1 class="fw-bolder my-5">So how many Tawsela<br> passengers can you take?</h1>
             <div *ngIf=" (avilablePassengers.errors?.required && avilablePassengers.touched)"
                 class="alert alert-danger w-25 mx-auto" role="alert">Enter number please</div>
+                
 
             <input type="number" id="avilablePassengers" aria-describedby="avilablePassengers" required
-                placeholder="number.. ?" name="avilablePassengers" #avilablePassengers="ngModel" [(ngModel)]="trip.avilablePassengers"
-                class="form-control w-25 mx-auto mb-3" min="1" max="5">
+                placeholder="number.. ?" name="avilablePassengers" #avilablePassengers="ngModel"
+                [(ngModel)]="trip.avilablePassengers" class="form-control w-25 mx-auto mb-3" min="1" max="5">
             <button (click)="next()" [disabled]="avilablePassengers.invalid"
                 class="btn  btn-lg btn-primary my-3">Continue</button>
         </div>
 
-           <!--Price input-->
-           <div *ngIf="recommPrice" class="form-group">
+        <!--Price recom-->
+        <div *ngIf="recommPrice" class="form-group">
             <h1 class="fw-bolder my-5">This is our recommended price per seat.<br> OK for you?</h1>
             <h1 class="fw-bolder my-5">{{selectedTax|currency:"EGP":"symbol"}}</h1>
+
+            <button (click)="next()" class="btn  btn-lg btn-outline-primary my-1 editBtn">Yes,perfect</button>
+            <hr>
+            <button (click)="clickEdit()" class="btn  btn-lg btn-outline-dark my-1 editBtn">No,I need to edit this
+                amount</button>
+        </div>
+        <!--Edit Amout div-->
+        <div *ngIf="editAmout" class="form-group">
+            <h1 class="fw-bolder my-5">Enter new amount</h1>
+            <div *ngIf=" (editAmount.errors?.required && editAmount.touched)" class="alert alert-danger w-25 mx-auto"
+                role="alert">Enter number please</div>
+            <input type="number" class="fw-bolder form-control mx-auto mb-3 w-25" required placeholder="{{selectedTax}}"
+                min="1" max="100" name="editAmout" #editAmount="ngModel" [(ngModel)]="trip.editAmount">
+
+            <button (click)="next()" class="btn  btn-lg btn-primary my-3"
+                [disabled]="editAmount.invalid">Continue</button>
+
+        </div>
+
+        <!--notice input-->
+        <div *ngIf="notice" class="form-group">
+            <h1 class="fw-bolder my-5">Anything to add about your ride?</h1>
+            <textarea  id="noticeArea" aria-describedby="noticeArea" 
+                placeholder="Any comments ??" name="noticeArea" #notice="ngModel"
+                [(ngModel)]="trip.notice" class="form-control w-50 mx-auto mb-3"></textarea>
+                
 
             <button (click)="next()"
                 class="btn  btn-lg btn-primary my-3">Continue</button>
         </div>
-
-
+              <!--summary Div-->
+              <div *ngIf="summary" class="form-group">
+                <h1 class="fw-bolder my-5">This is your trip details:</h1>
+               <h2></h2>
+                    
+                <button 
+                    class="btn  btn-lg btn-primary my-3" type = "submit">Publish</button>
+            </div>
 
 
     </form>

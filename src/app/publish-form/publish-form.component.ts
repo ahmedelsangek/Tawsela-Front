@@ -16,10 +16,11 @@ export class PublishFormComponent implements OnInit {
   avilablePassengers = false;
   recommPrice = false;
   notice = false;
+  summary = false;
   selectedTax = 0;
   cities = [] as any;
   trip = new Trip();
-
+editAmout = false;
   constructor(private _cityService: CitiesService) { }
 
   ngOnInit(): void {
@@ -41,14 +42,22 @@ export class PublishFormComponent implements OnInit {
     } else if (this.avilablePassengers == true) {
       this.avilablePassengers = false;
       this.recommPrice = true;
-    } else if (this.recommPrice == true) {
-      this.recommPrice = false;
+    } else if (this.editAmout == true||this.recommPrice==true) {
+      this.editAmout = false;
+      this.recommPrice=false;
       this.notice = true;
     } else if (this.notice == true) {
       this.notice = false;
+      this.summary = true;
     }
   }
   selectedCity(ev: Event,  selectedValue:any) {
-    this.selectedTax = selectedValue.tax;
+    this.selectedTax = selectedValue.tax * 6.5;
   }
+  clickEdit()
+  {
+    this.recommPrice=false;
+    this.editAmout = true
+  }
+ 
 }

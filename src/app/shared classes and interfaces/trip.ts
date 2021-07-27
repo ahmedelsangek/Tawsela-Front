@@ -5,5 +5,6 @@ export class Trip {
     time?:string;
     avilablePassengers?:number;
     recommPrice?:number;
+    editAmount?:number;
     notice?:string;
 }
