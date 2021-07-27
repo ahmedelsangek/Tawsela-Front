@@ -19,12 +19,13 @@
                     </div>
                     <hr class="border">
                     <div class="date col-md-3  h-100 my-auto d-flex">
-                        <input type="date"  name="date" class="form-control flex-col-reverse me-2 ps-2  border-0">
+                        <i class="bi bi-calendar-check  ms-1 my-auto"></i>
+                        <input type="text"  onfocus="(this.type='date')" onblur="(this.type='date')"  name="date" placeholder="Date" class="form-control flex-col-reverse mx-2 ps-2  border-0">
                     </div>
                     <hr class="border">
                     <div class="number col-md-2 h-100 my-auto d-flex">
                             <i class="bi bi-person-plus-fill ms-2 my-auto"></i>
-                            <input class="quantity form-control border-0 w-75 mx-2 ps-2" min="0" name="quantity" value="1" placeholder="1 Passenger" type="number">
+                            <input class="quantity form-control border-0 mx-2 ps-2" min="0" name="quantity" value="1" placeholder="1 Passenger" type="number">
                     </div>
                     <hr class="border">
                     <div class="search col-auto h-100 my-auto d-flex m-auto">
