@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { CitiesService } from '../shared classes and interfaces/cities.service';
 import { Trip } from '../shared classes and interfaces/trip';
 
@@ -59,5 +60,7 @@ editAmout = false;
     this.recommPrice=false;
     this.editAmout = true
   }
- 
+  clickSub(data:NgForm) {
+    console.log(data.value);
+ }
 }

@@ -1,5 +1,5 @@
 <div class="container">
-    <form #Form="ngForm" >
+    <form #tripForm="ngForm" (ngSubmit)="clickSub(tripForm.value)">
         <!--Departure input-->
         <div *ngIf="departure" class="form-group">
             <h1 class="fw-bolder my-5">Where are you leaving from?</h1>
