@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
-
+  public isVisible: boolean = true;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  
+  readMore(){
+    const toggleText = document.querySelector(".more-text");
+    toggleText?.classList.toggle('show-more')
+    this.isVisible = !this.isVisible;
+  }
 }
