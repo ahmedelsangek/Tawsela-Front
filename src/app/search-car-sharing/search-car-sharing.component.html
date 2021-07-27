@@ -3,12 +3,12 @@
         <div  class="info text-center d-flex flex-column justify-content-center align-items-center">
             <h1>Where do you want to go?</h1>
             <div class="input-div mb-3">
-              <div  *ngIf=" (distination.errors?.required && distination.touched)" class="form-text text-danger">This field is required.</div>
-              <input type="text"  placeholder="Distination" required name="distination" #distination="ngModel" [(ngModel)]="searchTrip.distination">
+              <div  *ngIf=" (Distination.errors?.required && Distination.touched)" class="form-text text-danger">This field is required.</div>
+              <input type="text"  placeholder="Distination" required name="Distination" #Distination="ngModel" [(ngModel)]="searchTrip.Distination">
             </div>
             <div class="input-div mb-3">
-                <div  *ngIf=" (departure.errors?.required && departure.touched)" class="form-text text-danger">This field is required.</div>
-                <input type="text"  placeholder="Where are you" required name="departure" #departure="ngModel" [(ngModel)]="searchTrip.departure">
+                <div  *ngIf=" (Departure.errors?.required && Departure.touched)" class="form-text text-danger">This field is required.</div>
+                <input type="text"  placeholder="Where are you" required name="Departure" #Departure="ngModel" [(ngModel)]="searchTrip.Departure">
               </div>
               <!-- the date and number of passenger section -->
               <div class="border-top border-bottom d-flex justify-content-between dateSection">

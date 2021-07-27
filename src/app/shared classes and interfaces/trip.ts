@@ -1,10 +1,10 @@
 export class Trip {
-    departure?:string;
-    distination?:string;
-    date?:string;
-    time?:string;
-    avilablePassengers?:number;
-    recommPrice?:number;
+    Departure?:string;
+    Distination?:string;
+    Date?:string;
+    Time?:string;
+    AvilablePassengers?:number;
+    RecommPrice?:number;
     editAmount?:number;
-    notice?:string;
+    Notice?:string;
 }
