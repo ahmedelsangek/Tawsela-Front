@@ -1,6 +1,6 @@
 export class Trip {
-    Departure?:string;
-    Distination?:string;
+    Departure?:any;
+    Distination?:any;
     Date?:string;
     Time?:string;
     AvilablePassengers?:number;

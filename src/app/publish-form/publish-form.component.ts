@@ -22,6 +22,8 @@ export class PublishFormComponent implements OnInit {
   cities = [] as any;
   trip = new Trip();
 editAmout = false;
+finalSummary = [] as any;
+
   constructor(private _cityService: CitiesService) { }
 
   ngOnInit(): void {
@@ -51,6 +53,10 @@ editAmout = false;
       this.notice = false;
       this.summary = true;
     }
+    else if (this.summary == true) {
+      this.summary = false;
+      this.departure = true;
+    }
   }
   selectedCity(ev: Event,  selectedValue:any) {
     this.selectedTax = selectedValue.tax * 6.5;
@@ -60,7 +66,7 @@ editAmout = false;
     this.recommPrice=false;
     this.editAmout = true
   }
-  clickSub(data:NgForm) {
-    console.log(data.value);
+  onSubmit(){
+   this.finalSummary = this.trip;
  }
 }

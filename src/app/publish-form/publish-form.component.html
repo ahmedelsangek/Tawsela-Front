@@ -1,114 +1,189 @@
 <div class="container">
-    <form #tripForm="ngForm" (ngSubmit)="clickSub(tripForm.value)">
+    <form #tripForm="ngForm" (ngSubmit)="onSubmit()">
         <!--Departure input-->
         <div *ngIf="departure" class="form-group">
             <h1 class="fw-bolder my-5">Where are you leaving from?</h1>
-            <div *ngIf=" (Departure.errors?.required && Departure.touched)" class="alert alert-danger w-25  mx-auto"
-                role="alert">Enter your departure</div>
+
+            <div *ngIf="Departure.errors?.required && Departure.touched" class="alert alert-danger w-25 mx-auto"
+                role="alert">
+                Enter your departure
+            </div>
 
             <select id="departureCity" aria-describedby="Departure" required placeholder="travelling from .. ?"
                 name="Departure" #Departure="ngModel" [(ngModel)]="trip.Departure"
                 class="form-select w-25 mx-auto mb-3">
                 <option *ngFor="let city of cities" [ngValue]="city">
-                    {{city.name}}
+                    {{ city.name }}
                 </option>
             </select>
-            <button (click)="next()" [disabled]="Departure.invalid"
-                class="btn  btn-lg btn-primary my-3">Continue</button>
+            <button (click)="next()" [disabled]="Departure.invalid" class="btn btn-lg btn-primary my-3">
+                Continue
+            </button>
         </div>
         <!--Distination input-->
         <div *ngIf="distination" class="form-group">
             <h1 class="fw-bolder my-5">Where are you heading?</h1>
-            <div *ngIf=" (Distination.errors?.required && Distination.touched)" class="alert alert-danger w-25 mx-auto"
-                role="alert">Enter your Destination</div>
+            <div *ngIf="Distination.errors?.required && Distination.touched" class="alert alert-danger w-25 mx-auto"
+                role="alert">
+                Enter your Destination
+            </div>
 
             <select id="distination" aria-describedby="Distination" required placeholder="travelling from .. ?"
                 name="Distination" #Distination="ngModel" [(ngModel)]="trip.Distination"
-                (change)="selectedCity($event,Distination.value)" class="form-select w-25 mx-auto mb-3">
+                (change)="selectedCity($event, Distination.value)" class="form-select w-25 mx-auto mb-3">
                 <option *ngFor="let city of cities" [ngValue]="city">
-                    {{city.name}}
+                    {{ city.name }}
                 </option>
             </select>
 
-            <button (click)="next()" [disabled]="Distination.invalid"
-                class="btn  btn-lg btn-primary my-3">Continue</button>
+            <button (click)="next()" [disabled]="Distination.invalid" class="btn btn-lg btn-primary my-3">
+                Continue
+            </button>
         </div>
         <!--Date input-->
         <div *ngIf="date" class="form-group">
             <h1 class="fw-bolder my-5">When are you going?</h1>
-            <div *ngIf=" (date.errors?.required && date.touched)" class="alert alert-danger w-25 mx-auto" role="alert">
-                Select date please</div>
+            <div *ngIf="date.errors?.required && date.touched" class="alert alert-danger w-25 mx-auto" role="alert">
+                Select date please
+            </div>
 
             <input type="date" id="date" aria-describedby="Date" required placeholder="travelling at ?" name="Date"
-                #date="ngModel" [(ngModel)]="trip.Date" class="form-control w-25 mx-auto mb-3">
-            <button (click)="next()" [disabled]="date.invalid" class="btn  btn-lg btn-primary my-3">Continue</button>
+                #date="ngModel" [(ngModel)]="trip.Date" class="form-control w-25 mx-auto mb-3" />
+            <button (click)="next()" [disabled]="date.invalid" class="btn btn-lg btn-primary my-3">
+                Continue
+            </button>
         </div>
         <!--Time input-->
         <div *ngIf="time" class="form-group">
             <h1 class="fw-bolder my-5">At what time will you pick passengers up?</h1>
-            <div *ngIf=" (Time.errors?.required && Time.touched)" class="alert alert-danger w-25 mx-auto" role="alert">
-                Select time please</div>
+            <div *ngIf="Time.errors?.required && Time.touched" class="alert alert-danger w-25 mx-auto" role="alert">
+                Select time please
+            </div>
             <input type="time" id="time" aria-describedby="time" required placeholder="travelling from .. ?" name="Time"
-                #Time="ngModel" [(ngModel)]="trip.Time" class="form-control w-25 mx-auto mb-3">
-            <button (click)="next()" [disabled]="Time.invalid" class="btn  btn-lg btn-primary my-3">Continue</button>
+                #Time="ngModel" [(ngModel)]="trip.Time" class="form-control w-25 mx-auto mb-3" />
+            <button (click)="next()" [disabled]="Time.invalid" class="btn btn-lg btn-primary my-3">
+                Continue
+            </button>
         </div>
         <!--Number input-->
         <div *ngIf="avilablePassengers" class="form-group">
-            <h1 class="fw-bolder my-5">So how many Tawsela<br> passengers can you take?</h1>
-            <div *ngIf=" (AvilablePassengers.errors?.required && AvilablePassengers.touched)"
-                class="alert alert-danger w-25 mx-auto" role="alert">Enter number please</div>
-                
+            <h1 class="fw-bolder my-5">
+                So how many Tawsela<br />
+                passengers can you take?
+            </h1>
+            <div *ngIf="
+          AvilablePassengers.errors?.required && AvilablePassengers.touched
+        " class="alert alert-danger w-25 mx-auto" role="alert">
+                Enter number please
+            </div>
 
             <input type="number" id="avilablePassengers" aria-describedby="avilablePassengers" required
                 placeholder="number.. ?" name="AvilablePassengers" #AvilablePassengers="ngModel"
-                [(ngModel)]="trip.AvilablePassengers" class="form-control w-25 mx-auto mb-3" min="1" max="5">
-            <button (click)="next()" [disabled]="AvilablePassengers.invalid"
-                class="btn  btn-lg btn-primary my-3">Continue</button>
+                [(ngModel)]="trip.AvilablePassengers" class="form-control w-25 mx-auto mb-3" min="1" max="5" />
+            <button (click)="next()" [disabled]="AvilablePassengers.invalid" class="btn btn-lg btn-primary my-3">
+                Continue
+            </button>
         </div>
 
         <!--Price recom-->
         <div *ngIf="recommPrice" class="form-group">
-            <h1 class="fw-bolder my-5">This is our recommended price per seat.<br> OK for you?</h1>
-            <h1 class="fw-bolder my-5">{{selectedTax|currency:"EGP":"symbol"}}</h1>
+            <h1 class="fw-bolder my-5">
+                This is our recommended price per seat.<br />
+                OK for you?
+            </h1>
+            <h1 class="fw-bolder my-5">
+                {{ selectedTax | currency: "EGP":"symbol" }}
+            </h1>
 
-            <button (click)="next()" class="btn  btn-lg btn-outline-primary my-1 editBtn">Yes,perfect</button>
-            <hr>
-            <button (click)="clickEdit()" class="btn  btn-lg btn-outline-dark my-1 editBtn">No,I need to edit this
-                amount</button>
+            <button (click)="next()" class="btn btn-lg btn-outline-primary my-1 editBtn">
+                Yes,perfect
+            </button>
+            <hr />
+            <button (click)="clickEdit()" class="btn btn-lg btn-outline-dark my-1 editBtn">
+                No,I need to edit this amount
+            </button>
         </div>
         <!--Edit Amout div-->
         <div *ngIf="editAmout" class="form-group">
             <h1 class="fw-bolder my-5">Enter new amount</h1>
-            <div *ngIf=" (editAmount.errors?.required && editAmount.touched)" class="alert alert-danger w-25 mx-auto"
-                role="alert">Enter number please</div>
-            <input type="number" class="fw-bolder form-control mx-auto mb-3 w-25" required placeholder="{{selectedTax}}"
-                min="1" max="100" name="editAmout" #editAmount="ngModel" [(ngModel)]="trip.editAmount">
+            <div *ngIf="editAmount.errors?.required && editAmount.touched" class="alert alert-danger w-25 mx-auto"
+                role="alert">
+                Enter number please
+            </div>
+            <input type="number" class="fw-bolder form-control mx-auto mb-3 w-25" required value="{{ selectedTax }}"
+                min="1" max="100" name="editAmout" #editAmount="ngModel" [(ngModel)]="trip.editAmount" />
 
-            <button (click)="next()" class="btn  btn-lg btn-primary my-3"
-                [disabled]="editAmount.invalid">Continue</button>
-
+            <button (click)="next()" class="btn btn-lg btn-primary my-3" [disabled]="editAmount.invalid">
+                Continue
+            </button>
         </div>
 
         <!--notice input-->
         <div *ngIf="notice" class="form-group">
             <h1 class="fw-bolder my-5">Anything to add about your ride?</h1>
-            <textarea  id="noticeArea" aria-describedby="noticeArea" 
-                placeholder="Any comments ??" name="noticeArea" #Notice="ngModel"
-                [(ngModel)]="trip.Notice" class="form-control w-50 mx-auto mb-3"></textarea>
-                
+            <textarea id="noticeArea" aria-describedby="noticeArea" placeholder="Any comments ??" name="noticeArea"
+                #Notice="ngModel" [(ngModel)]="trip.Notice" class="form-control w-50 mx-auto mb-3"></textarea>
 
-            <button (click)="next()"
-                class="btn  btn-lg btn-primary my-3">Continue</button>
+            <button (click)="next();onSubmit()" class="btn btn-lg btn-primary my-3">
+                Continue
+            </button>
         </div>
-              <!--summary Div-->
-              <div *ngIf="summary" class="form-group">
-                <h1 class="fw-bolder my-5">This is your trip details:</h1>
-               <h2></h2>
-                    
-                <button 
-                    class="btn  btn-lg btn-primary my-3" type = "submit">Publish</button>
-            </div>
-
-
+        <!--summary Div-->
+        <div *ngIf="summary" class="form-group">
+            <h1 class="fw-bolder my-5">This is your trip details:</h1>
+            <table class="table table-dark table-striped w-50 mx-auto">
+                <thead>
+                    <tr class="text-primary ">
+                        <th scope="col">#</th>
+                        <th scope="col">Info</th>
+                        <th scope="col">Your data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>From</td>
+                        <td>{{trip.Departure.name}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>To</td>
+                        <td>{{trip.Distination.name}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Avilable seats</td>
+                        <td>{{trip.AvilablePassengers}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>On</td>
+                        <td>{{trip.Date}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>At</td>
+                        <td>{{trip.Time}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>Recommended price</td>
+                        <td>{{selectedTax| currency: "EGP":"symbol"}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>Your new price</td>
+                        <td>{{trip.editAmount| currency: "EGP":"symbol"}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
+                        <td>Rules for ride</td>
+                        <td>{{trip.Notice}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-lg btn-danger my-3 mx-2"(click)="next()">Edit</button>
+            <button class="btn btn-lg btn-primary my-3"[routerLink]="['/home']">Publish</button>
+        </div>
     </form>
 </div>
