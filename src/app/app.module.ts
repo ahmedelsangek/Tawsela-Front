@@ -22,6 +22,7 @@ import { PublishFormComponent } from './publish-form/publish-form.component';
 import { SearchCarSharingComponent } from './search-car-sharing/search-car-sharing.component';
 import { DateComponent } from './search-car-sharing/date/date.component';
 import { PassengersComponent } from './search-car-sharing/passengers/passengers.component';
+import { TripComponent } from './trip/trip.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { PassengersComponent } from './search-car-sharing/passengers/passengers.
     SearchCarSharingComponent,
     DateComponent,
     PassengersComponent,
+    TripComponent,
   ],
   imports: [
     BrowserModule,

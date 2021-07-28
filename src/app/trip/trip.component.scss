@@ -1,0 +1,109 @@
+section {
+  .trip {
+    width: 600px;
+    margin: 0 auto;
+    font-weight: bold;
+    box-shadow: rgb(0 0 0 / 16%) 0px 1pt 4pt, rgb(0 0 0 / 8%) 0px 2pt 8pt;
+    padding: 20px;
+    border-radius: 20px;
+    @media (max-width: 768px) {
+      width: 500px;
+    }
+    @media (max-width: 540px) {
+      width: 330px;
+    }
+    .trip-details {
+      flex-wrap: nowrap;
+      margin-bottom: 40px;
+      color: #054752;
+      span {
+        display: block;
+      }
+      .details {
+        display: flex;
+        @media (max-width: 992px) {
+          width: 50%;
+          flex-wrap: nowrap;
+        }
+        div {
+          &:first-of-type {
+            width: 26.666667%;
+            @media (max-width: 768px) {
+              width: 32.666667%;
+            }
+            @media (max-width: 540px) {
+              width: 53.666667%;
+            }
+          }
+          &.line-center {
+            display: flex;
+            align-items: center;
+            padding: 0;
+            width: 4%;
+            span {
+              position: relative;
+              width: 35%;
+              height: 70%;
+              background-color: #054752;
+              &::before {
+                content: "";
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                border: 2px solid #054752;
+                border-radius: 50%;
+                top: -8px;
+                left: -3px;
+              }
+              &::after {
+                content: "";
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                border: 2px solid #054752;
+                border-radius: 50%;
+                bottom: -9px;
+                left: -3px;
+              }
+            }
+          }
+          &.destination {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+          }
+        }
+      }
+      .price {
+        text-align: right;
+        padding-right: 0;
+        @media (max-width: 992px) {
+          width: 50%;
+        }
+      }
+    }
+    .driver-details {
+      display: flex;
+      justify-content: space-between;
+      .right {
+        display: flex;
+        .photo {
+          margin-right: 20px;
+          img {
+            border-radius: 50%;
+          }
+        }
+        .driver-name {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      .seats {
+        display: flex;
+        align-items: center;
+        padding-right: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}
