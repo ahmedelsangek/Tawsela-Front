@@ -12,18 +12,55 @@
               </div>
               <!-- the date and number of passenger section -->
               <div class="border-top border-bottom d-flex justify-content-between dateSection">
-                  <a [routerLink]="['/date']"class="p-3 Links">Today</a>
-                  <a [routerLink]="['/passengers']" class="p-3 Links" >{{passenger}} Passengers</a>
+                  <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="p-3 Links">{{date.value}}<span *ngIf="Today">Date</span></a>
+                  <a data-bs-toggle="modal" data-bs-target="#passengerModal" class="p-3 Links" >{{num}} Passengers</a>
 
               </div>
                 <button  type="submit">Search</button>
                 <!-- the children -->
-                <div class="d-none">
-                <app-date></app-date>
-                <app-passengers ></app-passengers>
-                 </div>
     
                 </div>
+                <!-- passengerModal -->
+                
+<div class="modal" tabindex="-1" id="passengerModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+       
+        <div class="modal-body">
+            <section class="d-flex flex-column justify-content-center align-items-center">
+                <h1>Number of seats to book</h1>
+                <div class="d-flex justify-content-center align-items-center my-5">
+                    <a id="miusBtn" (click)="minus()" class=" mx-5  addRemoveBtn "><i class="bi bi-dash-circle"></i></a>
+                    <input id="number" class=" mx-5 addRemoveBtn"  [(ngModel)]="searchTrip.AvilablePassengers" value="{{num}}" >
+                    <a id="plusBtn" (click)="plus()" class=" mx-5 baseColor addRemoveBtn "><i class="bi bi-plus-circle"></i></a>
+                </div>
+            </section>
+        </div>
+
+        <div class="modal-footer">
+            <button data-bs-dismiss="modal">Continue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- dateModal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <section class="d-flex flex-column justify-content-center align-items-center">
+            <h1> when are you going?</h1>
+          <input id="date" #date="ngModel" type="date" class="form-control w-25"[(ngModel)]="searchTrip.Date" name="Date" value="{{date.value}}" (change)="bindData(date.value)" >
+          {{date.value}}
+          </section>
+        </div>
+        <div class="modal-footer">
+          <button data-bs-dismiss="modal" type="button" >Continue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
                 
     </form>
    

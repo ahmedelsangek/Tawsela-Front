@@ -21,8 +21,7 @@ import { LogInComponent } from './log-in/log-in.component';
 import { PublishFormComponent } from './publish-form/publish-form.component';
 import { SearchCarSharingComponent } from './search-car-sharing/search-car-sharing.component';
 import { DateComponent } from './search-car-sharing/date/date.component';
-import { PassengersComponent } from './search-car-sharing/passengers/passengers.component';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,11 +43,12 @@ import { PassengersComponent } from './search-car-sharing/passengers/passengers.
     LogInComponent,
     SearchCarSharingComponent,
     DateComponent,
-    PassengersComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     FormsModule,
   ],
   providers: [],

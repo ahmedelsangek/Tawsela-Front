@@ -9,7 +9,6 @@ import { PublishFormComponent } from './publish-form/publish-form.component';
 import { FormComponent } from './registration/form/form.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { DateComponent } from './search-car-sharing/date/date.component';
-import { PassengersComponent } from './search-car-sharing/passengers/passengers.component';
 import { SearchCarSharingComponent } from './search-car-sharing/search-car-sharing.component';
 
 const routes: Routes = [
@@ -23,7 +22,6 @@ const routes: Routes = [
   {path:"publishForm",component:PublishFormComponent},
   {path:"search",component:SearchCarSharingComponent},
   {path:"date",component:DateComponent},
-  {path:"passengers",component:PassengersComponent},
   {path:"*",component:PageNotFoundComponent},
 ];
 
