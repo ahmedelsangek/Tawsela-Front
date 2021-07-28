@@ -1,5 +1,25 @@
-<section class="d-flex flex-column justify-content-center align-items-center">
-  <h1> when are you going?</h1>
-<input type="date" class="form-control w-25">
-<button [routerLink]="['/search']">Continue</button>
-</section>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+     
+      <div class="modal-body">
+        <section class="d-flex flex-column justify-content-center align-items-center">
+          <h1> when are you going?</h1>
+          
+        <input type="date" class="form-control w-25"[(ngModel)]="date"  >
+        
+        
+        </section>
+      </div>
+      <div class="modal-footer">
+        <button type="button" >Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
