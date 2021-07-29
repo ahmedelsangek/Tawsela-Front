@@ -18,90 +18,47 @@
       <div *ngIf="name" class="info text-center">
         <h1>So what's your user name?</h1>
         <div class="input-div mb-3">
-          <div *ngIf=" (userName.errors?.required && userName.touched)" class="form-text text-danger">This field is
-            required.</div>
-          <input type="text" id="User-name" placeholder="User name" required name="userName" #userName="ngModel"
+          <div class="form-text text-danger" *ngIf="(userName.errors?.pattern)">Must be more than 8 characters use (. or _) ONLY </div>
+          <div *ngIf=" (userName.errors?.required && userName.touched)" class="form-text text-danger">This field is required.</div>
+          <input type="text" id="User-name" placeholder="User name" required name="userName" pattern="^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$" #userName="ngModel"
             [(ngModel)]="appUser.userName">
         </div>
-        <!-- <div class="input-div mb-3">
-          <div *ngIf=" (lastName.errors?.required && lastName.touched)" class="form-text text-danger">This field is
-            required.</div>
-          <input type="text" id="last-name" placeholder="Last name" required name="lastName" #lastName="ngModel"
-            [(ngModel)]="appUser.lastName">
-        </div> -->
+       
         <button (click)="next()" [disabled]="userName.invalid">Continue</button>
       </div>
       <!-- enter birthdate -->
       <div *ngIf="date" class="info text-center">
         <h1>What's your date of birth?</h1>
         <div class="input-div mb-3">
-          <div *ngIf=" (birthday.errors?.required && birthday.touched)" class="form-text text-danger">This field is
+          <div *ngIf=" (birthDate.errors?.required && birthDate.touched)" class="form-text text-danger">This field is
             required.</div>
-          <div *ngIf=" (birthday.errors?.pattern )" class="form-text text-danger">the Right Pattern dd/mm/yyyy</div>
-          <input type="text" id="date" placeholder="DD/MM/YYYY" name="birthday" required
+          <div *ngIf=" (birthDate.errors?.pattern )" class="form-text text-danger">the Right Pattern dd/mm/yyyy</div>
+          <input type="text" id="date" placeholder="DD/MM/YYYY" name="birthDate" required
             pattern="(?:0[1-9]|[12][0-9]|3[01])[-/.](?:0[1-9]|1[012])[-/.](?:19\d{2}|20[01][0-9]|2020)"
-            #birthday="ngModel" [(ngModel)]="appUser.birthday">
+            #birthDate="ngModel" [(ngModel)]="appUser.birthDate">
         </div>
-        <button (click)="next()" [disabled]="birthday.invalid ">Continue</button>
+        <button (click)="next()" [disabled]="birthDate.invalid ">Continue</button>
       </div>
-
-
       <!-- enter Car Id -->
       <div *ngIf="carId" class="info text-center">
-        <h1>What's Id of your Car?</h1>
+        <h1>do you have a Car?</h1>
         <div class="input-div mb-3">
-          <div *ngIf=" (carId.errors?.required && carId.touched)" class="form-text text-danger">This field is
-            required.</div>
-          <div *ngIf=" (carId.errors?.pattern )" class="form-text text-danger">the right pattern should content
-            characters and numbers (ABC-999)</div>
-          <input type="text" id="carId" placeholder="Car Id" name="carId" required
-            pattern="[0-9]{6,7}|[a-zA-Z]{1,3}-[0-9]{1,6}" #carId="ngModel" [(ngModel)]="appUser.carId">
-        </div>
-        <button (click)="next()" [disabled]="carId.invalid ">Continue</button>
+          <!-- car modal -->
+
+
+
+        
+        </div> 
+        <button  (click)="noCar()">I don't have a car </button>
+        <button  data-bs-toggle="modal" data-bs-target="#exampleModal" >add a Vehicle</button>
       </div>
-
-
-
-      <!-- select gender -->
-      <!-- <div *ngIf="gender" class="register-option">
-        <h1>How would you like to be<br>addressed?</h1>
-        <label class="radio-inline choice row">
-          <div class="opt col-lg-8">
-            Mrs./Ms.
-          </div>
-          <div class="icons col-lg-4" style="text-align: right;">
-            <input type="radio" name="gender" value="mrs" style="opacity: 0;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor"
-              class="bi bi-chevron-right" viewBox="0 0 16 16">
-              <path fill-rule="evenodd"
-                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-            </svg>
-          </div>
-        </label>
-        <hr>
-        <label class="radio-inline choice row">
-          <div class="opt col-lg-8" style="float: left;">
-            Mr.
-          </div>
-          <div class="icons col-lg-4">
-            <input type="radio" name="gender" value="ms" style="opacity: 0;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor"
-              class="bi bi-chevron-right" viewBox="0 0 16 16">
-              <path fill-rule="evenodd"
-                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-            </svg>
-          </div>
-        </label>
-        <button type="button" (click)="next()">Continue</button>
-      </div> -->
-
       <!-- New Code For gender -->
       <div *ngIf="gender" class="info text-center">
         <h1>How would you like to be<br>addressed?</h1>
         <div class="input-div mb-3">
           <div *ngIf=" (gender.errors?.required && gender.touched)" class="form-text text-danger transition">This field
             is required.</div>
-          <input type="text" id="gender" placeholder="gender" required name="gender" #gender="ngModel"
+          <input type="text" id="gender" placeholder="Mr. Or MS." required name="gender" #gender="ngModel"
             [(ngModel)]="appUser.gender">
         </div>
         <button type="button" (click)="next()">Continue</button>
@@ -112,13 +69,46 @@
         <div class="input-div mb-3">
           <div *ngIf=" (password.errors?.required && password.touched)" class="form-text text-danger transition">This
             field is required.</div>
-          <div *ngIf=" (password.errors?.pattern)" class="form-text text-danger">Minimum eight characters, at least one
-            letter and one number</div>
-          <input type="password" id="password" placeholder="Password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+          <div *ngIf=" (password.errors?.pattern)" class="form-text text-danger">Minimum eight characters, at least one letter, one number and one special character</div>
+          <input type="password" id="password" placeholder="Password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
             required name="password" #password="ngModel" [(ngModel)]="appUser.password">
         </div>
-        <button type="submit" [disabled]="password.invalid">submit</button>
+        <button type="submit" (click)="submit()" [routerLink]="['/home']" [disabled]="password.invalid">submit</button>
       </div>
     </form>
   </div>
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title my-1" id="exampleModalLabel">Car Details</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="input-div w-100 px-2">
+        <h4>What is your license plate number?</h4>
+        <input type="text" placeholder="ص ق ي - 1523" [(ngModel)]="newCar.CarNumber" nam="CarNumber" #CarNumber="ngModel">
+        <h4>Available Seats?</h4>
+        <input type="text" placeholder="seats"[(ngModel)]="newCar.AvaialbleSeats" nam="AvaialbleSeats" #AvaialbleSeats="ngModel">
+        
+        <h4>What is your car Model?</h4>
+        <input type="text" placeholder="BMW x3 2017" [(ngModel)]="newCar.CarModel" nam="CarModel" #CarModel="ngModel">
+        
+      </div>
+      <div class="modal-footer my-1">
+        <button class="mx-1" type="button"  data-bs-dismiss="modal">Close</button>
+        <button class="mx-1" type="button"  data-bs-dismiss="modal" (click)="haveCar()" >Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 </section>

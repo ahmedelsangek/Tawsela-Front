@@ -1,5 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Car } from 'src/app/shared classes and interfaces/car';
+import { CarService } from 'src/app/shared classes and interfaces/car.service';
 import { User } from 'src/app/shared classes and interfaces/user';
+import { UserServiceService } from 'src/app/shared classes and interfaces/user-service.service';
 
 @Component({
   selector: 'app-form',
@@ -14,10 +19,31 @@ export class FormComponent implements OnInit {
   gender=false;
   password=false;
 
-  constructor() { }
+  constructor(private userService: UserServiceService, private _CarService: CarService) { }
   appUser= new User();
+  newCar = new Car();
+ 
   ngOnInit(): void {
+    //  this.newCar.CarNumber=0;
+    //  this.newCar.AvaialbleSeats=0;
+    //  this.newCar.CarImagePath=""
+    //  this._CarService.addCar(this.newCar).subscribe(data => console.log(data));
   }
+  submit(){
+    this.userService.addUser(this.appUser).subscribe(data =>console.log(data));
+  }
+  noCar(){
+    this._CarService.addCar(this.newCar);
+    this.appUser.carId="1";
+    this.next();
+  }
+  haveCar(){
+    this.appUser.carId=this.newCar.CarNumber
+    this._CarService.addCar(this.newCar);
+    this.appUser.carId="1";
+    this.next();
+  }
+
   next(){
     if (this.email==true) {
       this.email=false;

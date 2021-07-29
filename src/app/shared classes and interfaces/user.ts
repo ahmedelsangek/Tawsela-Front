@@ -4,5 +4,5 @@ export class User {
     carId?:string;
     gender?: string;
     password?: string;
-    birthday?: string;
+    birthDate?: string;
 }
