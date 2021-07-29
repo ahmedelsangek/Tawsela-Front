@@ -33,13 +33,13 @@ export class FormComponent implements OnInit {
     this.userService.addUser(this.appUser).subscribe(data =>console.log(data));
   }
   noCar(){
-    this._CarService.addCar(this.newCar);
+    this._CarService.addCar(this.newCar).subscribe(data =>console.log(data));
     this.appUser.carId="1";
     this.next();
   }
   haveCar(){
     this.appUser.carId=this.newCar.CarNumber
-    this._CarService.addCar(this.newCar);
+    this._CarService.addCar(this.newCar).subscribe(data =>console.log(data));
     this.appUser.carId="1";
     this.next();
   }
