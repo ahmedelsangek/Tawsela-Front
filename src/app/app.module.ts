@@ -22,6 +22,8 @@ import { PublishFormComponent } from './publish-form/publish-form.component';
 import { SearchCarSharingComponent } from './search-car-sharing/search-car-sharing.component';
 import { DateComponent } from './search-car-sharing/date/date.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +52,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

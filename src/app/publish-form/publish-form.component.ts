@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { CitiesService } from '../shared classes and interfaces/cities.service';
 import { Trip } from '../shared classes and interfaces/trip';
+import { HttpClient } from '@angular/common/http';
+
+
 
 @Component({
   selector: 'app-publish-form',
@@ -21,10 +24,10 @@ export class PublishFormComponent implements OnInit {
   selectedTax = 0;
   cities = [] as any;
   trip = new Trip();
-editAmout = false;
-finalSummary = [] as any;
+  editAmout = false;
+  data=""
 
-  constructor(private _cityService: CitiesService) { }
+  constructor(private _cityService: CitiesService, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.cities = this._cityService.getCities();
@@ -45,9 +48,9 @@ finalSummary = [] as any;
     } else if (this.avilablePassengers == true) {
       this.avilablePassengers = false;
       this.recommPrice = true;
-    } else if (this.editAmout == true||this.recommPrice==true) {
+    } else if (this.editAmout == true || this.recommPrice == true) {
       this.editAmout = false;
-      this.recommPrice=false;
+      this.recommPrice = false;
       this.notice = true;
     } else if (this.notice == true) {
       this.notice = false;
@@ -58,15 +61,20 @@ finalSummary = [] as any;
       this.departure = true;
     }
   }
-  selectedCity(ev: Event,  selectedValue:any) {
+  selectedCity(ev: Event, selectedValue: any) {
     this.selectedTax = selectedValue.tax * 6.5;
   }
-  clickEdit()
-  {
-    this.recommPrice=false;
+  clickEdit() {
+    this.recommPrice = false;
     this.editAmout = true
   }
-  onSubmit(){
-   this.finalSummary = this.trip;
- }
+  onSubmit() {
+     this.data = "RecommPrice=" + this.selectedTax + "&Time=" + this.trip.Time + "&Notice=" + this.trip.Notice + "&Destination=" + this.trip.Distination.name
+     + "&AvilablePassengers=" + this.trip.AvilablePassengers + "&Date=" + this.trip.Date + "&Departure=" + this.trip.Departure.name;
+     console.log(this.data);
+     this.http.post("http://localhost:12268/api/trips", this.data).subscribe((res) => {});
+     
+
+
+  }
 }

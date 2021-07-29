@@ -1,5 +1,5 @@
 <div class="container">
-    <form #tripForm="ngForm" (ngSubmit)="onSubmit()">
+    <form #tripForm="ngForm" (ngSubmit)="onSubmit()" method="post">
         <!--Departure input-->
         <div *ngIf="departure" class="form-group">
             <h1 class="fw-bolder my-5">Where are you leaving from?</h1>
@@ -124,7 +124,7 @@
             <textarea id="noticeArea" aria-describedby="noticeArea" placeholder="Any comments ??" name="noticeArea"
                 #Notice="ngModel" [(ngModel)]="trip.Notice" class="form-control w-50 mx-auto mb-3"></textarea>
 
-            <button (click)="next();onSubmit()" class="btn btn-lg btn-primary my-3">
+            <button (click)="next()" class="btn btn-lg btn-primary my-3">
                 Continue
             </button>
         </div>
@@ -183,7 +183,7 @@
                 </tbody>
             </table>
             <button class="btn btn-lg btn-danger my-3 mx-2"(click)="next()">Edit</button>
-            <button class="btn btn-lg btn-primary my-3"[routerLink]="['/home']">Publish</button>
+            <button class="btn btn-lg btn-primary my-3"[routerLink]="['/home']" (click)="onSubmit()">Publish</button>
         </div>
     </form>
 </div>
