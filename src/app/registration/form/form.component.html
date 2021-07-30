@@ -73,7 +73,7 @@
           <input type="password" id="password" placeholder="Password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
             required name="password" #password="ngModel" [(ngModel)]="appUser.password">
         </div>
-        <button type="submit" (click)="submit()" [routerLink]="['/home']" [disabled]="password.invalid">submit</button>
+        <button type="submit" (click)="submit()" [routerLink]="['/login']" [disabled]="password.invalid">submit</button>
       </div>
     </form>
   </div>

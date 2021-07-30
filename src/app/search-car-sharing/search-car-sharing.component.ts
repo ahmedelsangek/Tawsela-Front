@@ -1,4 +1,5 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
+import { PublishServiceService } from '../shared classes and interfaces/publish-service.service';
 import { Trip } from '../shared classes and interfaces/trip';
 import { DateComponent } from './date/date.component';
 
@@ -11,7 +12,7 @@ export class SearchCarSharingComponent implements OnInit {
 searchTrip= new Trip();
  date:any;
  num:any;
- Today=true
+ Today=true;
   constructor() { }
 
   ngOnInit(): void {
@@ -19,6 +20,11 @@ searchTrip= new Trip();
     document.getElementById("miusBtn")?.classList.add("text-muted")
     this.num= document.getElementById("number")?.innerText;
   }
+  test(){
+    console.log("test")
+  }
+ 
+
   ngAfterViewInit(): void {
 
     this.num=1;

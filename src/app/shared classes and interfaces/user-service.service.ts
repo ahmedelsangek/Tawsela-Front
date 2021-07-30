@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { observable, Observable } from 'rxjs';
 import { User } from './user';
 
 @Injectable({
@@ -18,6 +18,15 @@ export class UserServiceService {
     return this.http.post(this.baseUrl+"register",body,{'headers':headers})
 
   }
+  Login(loginUser:User):Observable<User>{
+
+    const headers={ 'content-type': 'application/json'}
+    const body=JSON.stringify(loginUser);
+    console.log(body)
+    return this.http.post(this.baseUrl+"Login",body,{'headers':headers})
+  }
+  
+ 
 
   
 }

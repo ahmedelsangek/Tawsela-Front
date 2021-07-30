@@ -8,19 +8,19 @@
                 <form class="form row " action="">
                     <div class="from col-md-3 h-100 my-auto d-flex">
                         <i class="bi bi-record-circle-fill ms-1 my-auto"></i>
-                        <input type="text" class="from-input form-control mx-2 ps-2 border-0"
+                        <input type="text" class="from-input form-control mx-2 ps-2 border-0"name="Departure" #Departure="ngModel" [(ngModel)]="searchTrip.Departure"
                             placeholder="Leaving from..." aria-label="LeavingFrom" aria-describedby="basic-addon1">
                     </div>
                     <hr class="border">
                     <div class="to col-md-2 h-100 my-auto d-flex">
                         <i class="bi bi-record-circle-fill ms-1 my-auto"></i>
-                        <input type="text" name="goingToDate" class="from-input form-control mx-2 ps-2 border-0" placeholder="Going to..."
+                        <input type="text" name="goingToDate" class="from-input form-control mx-2 ps-2 border-0" placeholder="Going to... " name="Distination" #Distination="ngModel" [(ngModel)]="searchTrip.Distination"
                             aria-label="LeavingFrom" aria-describedby="basic-addon1">
                     </div>
                     <hr class="border">
                     <div class="date col-md-3  h-100 my-auto d-flex">
                         <i class="bi bi-calendar-check  ms-1 my-auto"></i>
-                        <input type="text"  onfocus="(this.type='date')" onblur="(this.type='date')"  name="date" placeholder="Date" class="form-control flex-col-reverse mx-2 ps-2  border-0">
+                        <input type="text"  onfocus="(this.type='date')" onblur="(this.type='date')"   placeholder="Date" name="Date" value="{{date.value}}" [(ngModel)]="searchTrip.Date"  #date="ngModel" class="form-control flex-col-reverse mx-2 ps-2  border-0">
                     </div>
                     <hr class="border">
                     <div class="number col-md-2 h-100 my-auto d-flex">
@@ -30,7 +30,7 @@
                     <hr class="border">
                     <div class="search col-auto h-100 my-auto d-flex m-auto">
                         
-                        <button type="submit" class="">
+                        <button type="submit" class="" [routerLink]="['/trips']">
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="kirk-icon sc-ifAKCX PRjYD" width="24" height="24" aria-hidden="true">
                                 <g fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
                                     <line x1="22" y1="22" x2="16.4" y2="16.4"></line>
@@ -68,14 +68,14 @@
     </div>
 </div>
 <div class="container mb-2 m-auto">
-    <h2 class="seconedH">3 things you'll love about BlaBlaCar</h2>
+    <h2 class="seconedH">3 things you'll love about Tawsela</h2>
 </div>
 
 <div class="features" id="features">
     <div class="container">
         
         <div class="feat">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="kirk-icon sc-ifAKCX cqcJrU" width="40" height="40" aria-hidden="true"><path d="M22.9,8.2l-3-4C19.807,4.074,19.657,4,19.5,4H15V1.5C15,1.224,14.775,1,14.5,1h-6C8.224,1,8,1.224,8,1.5V4H2.5 C2.224,4,2,4.224,2,4.5v8C2,12.775,2.224,13,2.5,13H8v10.5C8,23.775,8.224,24,8.5,24h6c0.275,0,0.5-0.225,0.5-0.5V13h4.5 c0.157,0,0.307-0.074,0.4-0.2l3-4C23.033,8.622,23.033,8.378,22.9,8.2z M9,2h5v2H9V2z M14,23H9V13h5V23z M19.25,12H3V5h16.25 l2.625,3.5L19.25,12z"></path></svg>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="kirk-icon  sc-ifAKCX cqcJrU" width="40" height="40" aria-hidden="true"><path d="M22.9,8.2l-3-4C19.807,4.074,19.657,4,19.5,4H15V1.5C15,1.224,14.775,1,14.5,1h-6C8.224,1,8,1.224,8,1.5V4H2.5 C2.224,4,2,4.224,2,4.5v8C2,12.775,2.224,13,2.5,13H8v10.5C8,23.775,8.224,24,8.5,24h6c0.275,0,0.5-0.225,0.5-0.5V13h4.5 c0.157,0,0.307-0.074,0.4-0.2l3-4C23.033,8.622,23.033,8.378,22.9,8.2z M9,2h5v2H9V2z M14,23H9V13h5V23z M19.25,12H3V5h16.25 l2.625,3.5L19.25,12z"></path></svg>
             <h4>Choice</h4>
             <p>We go everywhere. Literally thousands of destinations. No station required.</p>
         </div>
@@ -116,7 +116,7 @@
         <div class="row w-100">
             <section class="col-lg-6 px-5">
                 <h5>How do I book a carpool ride? </h5>
-                <p class="paragraph text">You can book a carpool ride on our mobile app, or on blablacar.com. Simply search for your destination, choose the date you want to travel and pick the carpool that suits you best! Some 
+                <p class="paragraph text">You can book a carpool ride on our mobile app, or on Tawsela.com. Simply search for your destination, choose the date you want to travel and pick the carpool that suits you best! Some 
                     <span class="more-text">
                     rides can be booked instantly, while other rides require manual approval from the driver. Either way, booking a carpool ride is fast, simple and easy.
                     </span>
@@ -126,7 +126,7 @@
             </section>
             <section class="col-lg-6 px-5">
                 <h5>How do I publish a carpool ride? </h5>
-                <p class="paragraph text" >Offering a carpool ride on BlaBlaCar is easy. To publish your ride, use our mobile app or blablacar.com. Indicate your departure and arrival points, the date and time of your departure, how many 
+                <p class="paragraph text" >Offering a carpool ride on Tawsela is easy. To publish your ride, use our mobile app or blablacar.com. Indicate your departure and arrival points, the date and time of your departure, how many 
                     <span class="more-text">
                         passengers you can take and the price per seat. You’ll also need to choose how you want to accept bookings (either automatically or manually), and you have the option of adding any important details you think your passengers should know about. Then tap ‘Publish ride’ and you’re done!
                     </span>
@@ -164,7 +164,7 @@
                 <h5>How much does a carpool ride cost? </h5>
                 <p class="paragraph text">The costs of a carpool ride can vary greatly, and depend on factors like distance, time of departure, the demand of that ride and more. It is also up to the driver to decide how much to charg
                     <span class="more-text">
-                        e per seat, so it’s hard to put an exact price tag on a ride. Check out some of our top carpool destinations to get an idea of price, or start searching for your next carpool ride on blablacar.com.
+                        e per seat, so it’s hard to put an exact price tag on a ride. Check out some of our top carpool destinations to get an idea of price, or start searching for your next carpool ride on Tawsela.com.
                     </span>
                 </p>
                 <button class="read-more"  (click)="readMore()" value="Read more" > Read more</button>  
@@ -172,7 +172,7 @@
             </section>
             <section class="col-lg-6 px-5">
                 <h5>How do I start carpooling? </h5>
-                <p class="paragraph text" >Carpooling with BlaBlaCar is super easy, and free! Simply sign up for an account and tell us some basic details about yourself. Once you have a BlaBlaCar account, you can start booking or
+                <p class="paragraph text" >Carpooling with BlaBlaCar is super easy, and free! Simply sign up for an account and tell us some basic details about yourself. Once you have a Tawsela account, you can start booking or
                     <span class="more-text">
                         publishing rides directly on our app or website.
                     </span>

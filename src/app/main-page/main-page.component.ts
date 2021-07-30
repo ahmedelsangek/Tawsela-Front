@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Trip } from '../shared classes and interfaces/trip';
 
 @Component({
   selector: 'app-main-page',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
   public isVisible: boolean = true;
+  searchTrip=new Trip()
   constructor() { }
 
   ngOnInit(): void {

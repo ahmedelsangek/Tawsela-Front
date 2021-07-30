@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
+import { BrowserModule  } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +23,8 @@ import { SearchCarSharingComponent } from './search-car-sharing/search-car-shari
 import { DateComponent } from './search-car-sharing/date/date.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { TripComponent } from './trip/trip.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,8 @@ import { HttpClientModule } from '@angular/common/http';
     LogInComponent,
     SearchCarSharingComponent,
     DateComponent,
+    TripComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
@@ -54,8 +57,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    CommonModule
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,34 +1,35 @@
-<section style="margin: 100px auto;">
-  <div class="container">
-    <div class="trip" >
+<section  style="margin: 100px auto;">
+  <div  *ngFor="let trip of trips"   class="container my-3">
+    <div  class="trip" >
       <div class="trip-details row">
-        <div class="details row col-lg-6">
+        <div  class="details row col-lg-6">
           <div class="col-lg-5">
-            <span></span>
-            <span style="font-weight: 500; color: rgb(112, 140, 145);">2h00</span>
+            <input type="hidden" [(ngModel)]="driverID" value="{{trip.captainId}}">
+            <span> </span>
+           
+            <span style="font-weight: 500; color: rgb(112, 140, 145);">{{trip.time}}</span>
             <span></span>
           </div>
-          <div class="line-center col-lg-2">
+          <div  class="line-center col-lg-2">
             <span></span>
           </div>
-          <div class="destination col-lg-5">
-            <span>Milan</span>
-            <span>Turin</span>
+          <div  class="destination col-lg-5">
+            <span>{{trip.departure}}</span>
+            <span>{{trip.distination}}</span>
           </div>
         </div>
         <div class="price col-lg-6">
-          <span>$7.00</span>
+          <span>{{trip.recommPrice}}</span>
         </div>
       </div>
-      <div class="driver-details">
+      <div  class="driver-details">
         <div class="right">
           <div class="photo">
             <img width="48" height="48"
               src="https://d2kwny77wxvuie.cloudfront.net/user/J7pNQ731RyCMeHYxZWgURw/thumbnail_144x144.jpeg"
               alt="Driver-Photo">
           </div>
-          <div class="driver-name">
-            <span>Luca</span>
+          <div  class="driver-name">
             <span style="display: flex; justify-content: center; align-items: center;">
               <img style="margin-right: 5px;" width="18px" height="18px" src="../assets/Images/iconmonstr-star-3-72.png"
                 alt="star">

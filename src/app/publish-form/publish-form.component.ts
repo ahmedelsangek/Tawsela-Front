@@ -71,7 +71,7 @@ export class PublishFormComponent implements OnInit {
   onSubmit() {
     this.trip.Distination=this.trip.Distination.name;
     this.trip.Departure = this.trip.Departure.name;
-    this.trip.CaptainId="5054279e-adc3-4061-b136-d6133bb4e905";
+    this.trip.CaptainId="fbf78e88-9478-4b40-a350-1a8585308d87";
     this.trip.RecommPrice=this.selectedTax;
     console.log("collected data");
     this._publishService.addTrip(this.trip).subscribe(data =>console.log(data));
