@@ -2,8 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { Trip } from './trip';
-import {catchError} from 'rxjs/operators';
-import { iTrip } from './iTrip';
+import { iTrip } from '../shared classes and interfaces/iTrip';
 
 @Injectable({
   providedIn: 'root'

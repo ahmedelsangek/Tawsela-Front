@@ -10,22 +10,17 @@ import { iTrip } from '../shared classes and interfaces/iTrip';
 })
 export class TripComponent implements OnInit {
 
-   trips:iTrip[]=[];
-names:string[]=["yehya","saad","Ayman"];
+  trips:iTrip[]=[];
 
   constructor(private _publishService:PublishServiceService ,private http: HttpClient) { }
 
   ngOnInit(): void {
     this._publishService.getTrips().subscribe(
-      data=>
-      {
-        this.trips = data;
-
-        console.log(this.trips);
+      data => {this.trips=data}
+    );
+    console.log(this.trips);
 
       }
-      
-    )
-  }
+  
 
 }

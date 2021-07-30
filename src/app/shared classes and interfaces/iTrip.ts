@@ -1,13 +1,12 @@
 export interface iTrip
 {
     id:number;
-    captinId:string;
-    Departure:string;
-    Distination:string;
-    Date:string;
-    AvilablePassengers:number;
-    Time:string;
-    RecommPrice:number;
-    
-    
+    captainId:string;
+    departure:string;
+    distination:string;
+    date:string;
+    avilablePassengers:number;
+    time:string;
+    recommPrice:number;
+    notice:string;
 }
