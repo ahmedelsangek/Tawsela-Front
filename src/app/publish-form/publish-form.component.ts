@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { CitiesService } from '../shared classes and interfaces/cities.service';
 import { Trip } from '../shared classes and interfaces/trip';
 import { HttpClient } from '@angular/common/http';
+import { PublishServiceService } from 'src/app/shared classes and interfaces/publish-service.service';
 
 
 
@@ -25,9 +26,8 @@ export class PublishFormComponent implements OnInit {
   cities = [] as any;
   trip = new Trip();
   editAmout = false;
-  data=""
 
-  constructor(private _cityService: CitiesService, private http: HttpClient) { }
+  constructor(private _cityService: CitiesService, private http: HttpClient , private _publishService:PublishServiceService) { }
 
   ngOnInit(): void {
     this.cities = this._cityService.getCities();
@@ -69,12 +69,12 @@ export class PublishFormComponent implements OnInit {
     this.editAmout = true
   }
   onSubmit() {
-     this.data = "RecommPrice=" + this.selectedTax + "&Time=" + this.trip.Time + "&Notice=" + this.trip.Notice + "&Destination=" + this.trip.Distination.name
-     + "&AvilablePassengers=" + this.trip.AvilablePassengers + "&Date=" + this.trip.Date + "&Departure=" + this.trip.Departure.name;
-     console.log(this.data);
-     this.http.post("http://localhost:12268/api/trips", this.data).subscribe((res) => {});
-     
-
-
+    this.trip.Distination=this.trip.Distination.name;
+    this.trip.Departure = this.trip.Departure.name;
+    this.trip.CaptainId="5054279e-adc3-4061-b136-d6133bb4e905";
+    this.trip.RecommPrice=this.selectedTax;
+    console.log("collected data");
+    this._publishService.addTrip(this.trip).subscribe(data =>console.log(data));
+    console.log("data sent");
   }
 }

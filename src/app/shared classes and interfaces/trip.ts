@@ -1,4 +1,5 @@
 export class Trip {
+    CaptainId?:string;
     Departure?:any;
     Distination?:any;
     Date?:string;

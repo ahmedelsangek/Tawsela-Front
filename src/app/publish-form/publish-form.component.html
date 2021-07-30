@@ -1,5 +1,5 @@
 <div class="container">
-    <form #tripForm="ngForm" (ngSubmit)="onSubmit()" method="post">
+    <form #tripForm="ngForm" (ngSubmit)="onSubmit()">
         <!--Departure input-->
         <div *ngIf="departure" class="form-group">
             <h1 class="fw-bolder my-5">Where are you leaving from?</h1>
@@ -182,8 +182,8 @@
                     </tr>
                 </tbody>
             </table>
-            <button class="btn btn-lg btn-danger my-3 mx-2"(click)="next()">Edit</button>
-            <button class="btn btn-lg btn-primary my-3"[routerLink]="['/home']" (click)="onSubmit()">Publish</button>
+            <button class="btn btn-lg btn-danger my-3 mx-2"(click)="next()">Edit</button> 
+            <button class="btn btn-lg btn-primary my-3"[routerLink]="['/home']" type="submit"(click)="onSubmit()">Publish</button>
         </div>
     </form>
 </div>

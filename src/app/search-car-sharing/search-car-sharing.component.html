@@ -16,7 +16,7 @@
                   <a data-bs-toggle="modal" data-bs-target="#passengerModal" class="p-3 Links" >{{num}} Passengers</a>
 
               </div>
-                <button  type="submit">Search</button>
+                <button  type="submit" [routerLink]="['/trips']">Search</button>
                 <!-- the children -->
     
                 </div>
@@ -51,7 +51,6 @@
           <section class="d-flex flex-column justify-content-center align-items-center">
             <h1> when are you going?</h1>
           <input id="date" #date="ngModel" type="date" class="form-control w-25"[(ngModel)]="searchTrip.Date" name="Date" value="{{date.value}}" (change)="bindData(date.value)" >
-          {{date.value}}
           </section>
         </div>
         <div class="modal-footer">

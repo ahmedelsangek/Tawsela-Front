@@ -10,6 +10,7 @@ import { FormComponent } from './registration/form/form.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { DateComponent } from './search-car-sharing/date/date.component';
 import { SearchCarSharingComponent } from './search-car-sharing/search-car-sharing.component';
+import { TripComponent } from './trip/trip.component';
 
 const routes: Routes = [
   {path:"",redirectTo:"home",pathMatch:"full"},
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path:"publishForm",component:PublishFormComponent},
   {path:"search",component:SearchCarSharingComponent},
   {path:"date",component:DateComponent},
-  {path:"*",component:PageNotFoundComponent},
+  {path:"trips",component:TripComponent},
+  {path:"*",component:PageNotFoundComponent}
 ];
 
 @NgModule({
