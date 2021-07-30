@@ -18,7 +18,7 @@
           <div  *ngIf=" (password.errors?.required && password.touched)" class="form-text text-danger transition">This field is required.</div>
           <input type="password" id="password" placeholder="Password" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" required name="password" #password="ngModel" [(ngModel)]="appUser.password">
         </div>
-        <button type="submit"(click)="submit()" [routerLink]="['/publishForm']" [disabled]="password.invalid">submit</button>  
+        <button type="submit"(click)="submit()" [routerLink]="['/offer-seats']" [disabled]="password.invalid">submit</button>  
       </div>
     </form>
 </section>
