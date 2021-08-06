@@ -2,7 +2,7 @@
 <section>
 <form #Form='ngForm'>
 <!-- email -->
-    <div  *ngIf="email" class="info text-center  ">
+    <div  *ngIf="email" class="info text-center  " style="margin-bottom: 278px;">
       <h1>What's your email?</h1>
       <div  *ngIf=" (email.errors?.required && email.touched)" class="form-text text-danger ">This field is required.</div>
         <div  *ngIf=" (email.errors?.pattern )" class="form-text text-danger ">Must match yourEmail@domain.com</div>
