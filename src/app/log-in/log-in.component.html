@@ -2,7 +2,7 @@
 <section>
 <form #Form='ngForm'>
 <!-- email -->
-    <div  *ngIf="email" class="info text-center  " style="margin-bottom: 278px;">
+    <div  *ngIf="email" class="info text-center  " style="margin-bottom: 277px;">
       <h1>What's your email?</h1>
       <div  *ngIf=" (email.errors?.required && email.touched)" class="form-text text-danger ">This field is required.</div>
         <div  *ngIf=" (email.errors?.pattern )" class="form-text text-danger ">Must match yourEmail@domain.com</div>
@@ -12,7 +12,7 @@
       <button (click)="next()" [disabled]="email.invalid" >Continue</button>
     </div>
     <!-- password -->
-    <div *ngIf="password" class="info text-center">
+    <div *ngIf="password" class="info text-center" style="margin-bottom: 277px;">
         <h1>We'll need the password.</h1>
         <div class="input-div mb-3">
           <div  *ngIf=" (password.errors?.required && password.touched)" class="form-text text-danger transition">This field is required.</div>
